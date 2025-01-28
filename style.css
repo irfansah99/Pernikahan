@@ -476,7 +476,7 @@ display: table;
   }
     .Mynavbar .offcanvas{
     height:100vh ;
-    width: auto;
+    width: 40vh;
   }
 }
 }
