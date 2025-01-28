@@ -474,5 +474,9 @@ display: table;
   .timeline li .timeline-panel::after{
     top: 31px;
   }
+    .Mynavbar .offcanvas{
+    height:100vh ;
+    width: auto;
+  }
 }
 }
