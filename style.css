@@ -202,7 +202,8 @@ body {
 .home h2,
 .gallery h2,
 .info h2,
-.story h2{
+.story h2,
+.gifts h2{
   color: var(--pink);
   font-family:  'sacramento';
   font-size: 5rem;
@@ -234,12 +235,15 @@ body {
   font-weight: 300;
 }
 .story,
-.gallery{
+.gallery,
+.gifts,
+.rspv{
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 .story span,
-.gallery span
+.gallery span,
+.gifts span
 {
   text-transform: uppercase;
   color: #666;
@@ -250,7 +254,8 @@ body {
 }
 .story p,
 .gallery p,
-.rspv p
+.rspv p,
+.gifts p
 {
   font-size: 1rem;
   font-weight: 300;
@@ -387,6 +392,41 @@ display: table;
   color: black;
   border: 1px solid white;
 }
+.btn_move {
+  animation: moveButton 2s infinite ease-in-out;
+  color: white;
+  background-color: #007bff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px ;
+}
+
+@keyframes moveButton {
+  0% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(5px) scale(1.1); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+.btn_move:hover {
+  animation: none;
+  transform: scale(1);
+}
+.copy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
 
 @media(max-width:1200px){
   .home .heart{
@@ -474,9 +514,9 @@ display: table;
   .timeline li .timeline-panel::after{
     top: 31px;
   }
-    .Mynavbar .offcanvas{
+  .Mynavbar .offcanvas{
     height:100vh ;
-    width: 20vh;
+    width: 30vh;
   }
 }
 }
