@@ -422,6 +422,7 @@ display: table;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .copy-button:hover {
