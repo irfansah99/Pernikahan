@@ -432,55 +432,94 @@ display: table;
 .copy-button:hover {
   background-color: #0056b3;
 }
-.Seeyou {
-  background: #c8c8c8;
+/* Gaya untuk bagian gifts */
+.gifts {
   padding: 4rem 0;
-  color: #fff;
+  background-color: #f8f9fa;
 }
 
-.Seeyou .container {
-  max-width: 960px;
-  margin: 0 auto;
+.gifts .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.Seeyou .row {
+.gifts .card-header {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.gifts .card-body {
+  padding: 1.5rem;
+}
+
+.gifts .rekening-info {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 }
 
-.Seeyou .col-md-8,
-.Seeyou .col-10 {
+.gifts .rekening-info i {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.gifts .copy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gifts .copy-button:hover {
+  background-color: #0056b3;
+}
+
+/* Gaya untuk bagian seeyou */
+.seeyou {
+  padding: 4rem 0;
+  background-color: #fff;
   text-align: center;
 }
 
-.Seeyou img {
-  width: 500px;
-  height: 500px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.seeyou img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
-.Seeyou h2 {
+.seeyou h3 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-top: 1rem;
+}
+
+.seeyou h2 {
   font-size: 2.5rem;
-  margin-top: 15px;
-  font-weight: bold;
+  color: #333;
+  margin-top: 0.5rem;
 }
 
-.Seeyou h3 {
-  font-size: 1.8rem;
-  color: #f9a825;
-  margin-bottom: 15px;
+.seeyou p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* Pastikan elemen tidak mempengaruhi layout saat diberi animasi */
+[data-aos] {
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.Seeyou p {
-  font-size: 1rem;
-  color: var(--bg);
-  line-height: 1.5;
-  margin-bottom: 30px;
+[data-aos].aos-animate {
+  transform: none !important;  /* Pastikan tidak ada transformasi yang mengubah ukuran */
 }
-
 
 
 
