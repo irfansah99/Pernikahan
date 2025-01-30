@@ -118,10 +118,13 @@ body {
   color: var(--pink);
   background-color: white;
   box-shadow: var(--shadow);
+  animation: moveButton 2s infinite ease-in-out;
 }
 .hero a:hover {
   background-color: var(--pink);
   color: white;
+  animation: none;
+  transform: scale(1);
 }
 .Mynavbar{
   background-color: rgba(255, 255, 255, 0.3) !important;
@@ -229,7 +232,7 @@ body {
 .info .card-body{
   font-size: 1rem;
 }
-.info .card-footer{
+.info .card-.seeyou{
   border-top: 1px solid #999;
   font-size: 0.9rem;
   font-weight: 300;
@@ -392,6 +395,7 @@ display: table;
   color: black;
   border: 1px solid white;
 }
+
 .btn_move {
   animation: moveButton 2s infinite ease-in-out;
   color: white;
@@ -428,6 +432,105 @@ display: table;
 .copy-button:hover {
   background-color: #0056b3;
 }
+.seeyou {
+  background-color: #f8f9fa; /* Warna latar belakang .seeyou */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.seeyou .container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.seeyou img {
+  width: 400px; /* Ukuran gambar */
+  height: 400px;
+  border-radius: 15px; /* Agar gambar menjadi lingkaran */
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.seeyou p {
+  font-size: 16px;
+  color: #6c757d; /* Warna teks */
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.seeyou h3 {
+  font-size: 22px;
+  color: #343a40;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.seeyou h2 {
+  font-size: 28px;
+  color: #007bff; /* Warna biru untuk nama */
+  font-weight: bold;
+  margin-top: 5px;
+}
+footer {
+  padding: 3rem;
+  background-color: var(--pink);
+  color: white;
+  text-align: center;
+}
+
+footer a {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: white;
+}
+
+
+
+/* Gaya untuk ikon media sosial */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+
+.social-icons a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 5rem;
+  aspect-ratio: 1;
+  font-size: 2rem;
+  color: #737373;
+  background: #444;
+  border-radius: 50%;
+  transition: color 0.6s ease-in-out;
+
+  &:hover {
+    color: var(--clr);
+    outline: 1px solid transparent;
+    --fill: 100%;
+  }
+
+}
+
+
+
+
+
+
+
 
 @media(max-width:1200px){
   .home .heart{
@@ -518,6 +621,15 @@ display: table;
   .Mynavbar .offcanvas{
     height:100vh ;
     width: 30vh;
+  }
+  .seeyou img {
+    width: 200px; /* Ukuran gambar */
+    height: 200px;
+    border-radius: 15px; /* Agar gambar menjadi lingkaran */
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 }
