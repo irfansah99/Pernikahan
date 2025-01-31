@@ -637,20 +637,15 @@
     </script>
 
 <script>
-  // Ambil parameter dari URL
   const urlParams = new URLSearchParams(window.location.search);
   const nama = urlParams.get('n')?.trim() || ''; 
   const pronoun = urlParams.get('p')?.trim() || 'Bapak/Ibu/Saudara/i'; 
 
-  // Pilih elemen yang akan diubah
   const namaSpan = document.querySelector('.hero h4 span');
   const namaInput = document.querySelector('#nama');
-
-  // Pastikan elemen ditemukan sebelum mengubah teksnya
   if (namaSpan) {
     let displayText = `${pronoun} ${nama}`.trim();
 
-    // Pastikan tanda koma tidak berdiri sendiri jika nama kosong
     if (nama) {
       displayText += ',';
     }
@@ -660,7 +655,6 @@
     console.warn("Elemen '.hero h4 span' tidak ditemukan.");
   }
 
-  // Pastikan input dengan id #nama ditemukan sebelum mengisi nilainya
   if (namaInput) {
     namaInput.value = nama;
   } else {
