@@ -439,6 +439,7 @@
                 </div>
               </div>
             </section>
+            
       
             <footer>
               <div class="container">
@@ -472,6 +473,14 @@
               </div>
             </footer>
             
+            <div id="audio-container">
+              <audio id="song" autoplay loop>
+                <source src="audio/song.mp3" type="audio/mp3">
+              </audio>
+            </div>
+            <div class="audio-icon-wrapper" style="display: none;">
+              <i class="bi bi-disc"></i>
+            </div>
       
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -564,6 +573,11 @@
 
     <script>
       const rootelement=document.querySelector(":root");
+      const audioiconwrapper=document.querySelector('.audio-icon-wrapper');
+      const song=document.querySelector('#song');
+      const audioicon=document.querySelector('.audio-icon-wrapper i')
+
+      let isPlaying=false;
       function disablescroll(){
         scrollTop = window.pageXOffset||document.documentElement.scrollTop;
         scrollLeft= window.pageXOffset||document.documentElement.scrollLeft;
@@ -577,12 +591,33 @@
       function enablescroll(){
         window.onscroll=function(){}
         rootelement.style.scrollBehavior='smooth';
-        localStorage.setItem('opened' ,'true');
+        playaudio();
       }
-      if(!localStorage.getItem('opened')){
+      function playaudio(){
+      song.volume=0.3;
+      song.play();
+      audioiconwrapper.style.display='flex';
+      isPlaying='true';
+    }
+    audioiconwrapper.onclick = function(){
+      if(isPlaying){
+      song.pause();
+      audioicon.classList.remove('bi-disc');
+      audioicon.classList.add('bi-pause-circle');
+      }else{
+        song.play();
+        audioicon.classList.add('bi-disc');
+      audioicon.classList.remove('bi-pause-circle');
+      }
+    
+    isPlaying=!isPlaying;
+    }
       disablescroll();
-      }
+
     </script>
+
+
+
     <script>
       window.addEventListener("load", function() {
   const form = document.getElementById('my-form');
@@ -601,5 +636,12 @@
 });
 
     </script>
+
+    <script>
+      const urlparam = new URLSearchParams(window.location.search);
+      const nama = urlparam.get('nama');
+      console.log(nama);
+    </script>
+
   </body>
 </html>
