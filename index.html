@@ -634,21 +634,27 @@
     })
   });
 });
-
     </script>
 
 <script>
   // Ambil parameter dari URL
   const urlParams = new URLSearchParams(window.location.search);
-  const nama = urlParams.get('n') || ''; 
-  const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i'; 
+  const nama = urlParams.get('n')?.trim() || ''; 
+  const pronoun = urlParams.get('p')?.trim() || 'Bapak/Ibu/Saudara/i'; 
 
   // Pilih elemen yang akan diubah
   const namaSpan = document.querySelector('.hero h4 span');
 
   // Pastikan elemen ditemukan sebelum mengubah teksnya
   if (namaSpan) {
-    namaSpan.innerText = `${pronoun} ${nama},`.replace(/ .$/,','); 
+    let displayText = `${pronoun} ${nama},`.trim();
+
+    // Pastikan tanda koma tidak berdiri sendiri di akhir teks
+    if (displayText.endsWith(',')) {
+      displayText = displayText.replace(/,\s*$/, ',');
+    }
+
+    namaSpan.innerText = displayText;
   } else {
     console.warn("Elemen '.hero h4 span' tidak ditemukan.");
   }
