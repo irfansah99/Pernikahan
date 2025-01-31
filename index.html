@@ -637,14 +637,23 @@
 
     </script>
 
-    <script>
-      const urlparam = new URLSearchParams(window.location.search);
-      const nama = urlparam.get('nama');
-      const pronoun = urlparam.get('p');
+<script>
+  // Ambil parameter dari URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const nama = urlParams.get('n') || ''; // Jika tidak ada, gunakan string kosong
+  const pronoun = urlParams.get('p') || ''; // Jika tidak ada, gunakan string kosong
 
-      const namaspan = document.querySelector('.hero h4 span');
-      namaSpan.innerText = `${pronoun} ${nama},`; 
-    </script>
+  // Pilih elemen yang akan diubah
+  const namaSpan = document.querySelector('.hero h4 span');
+
+  // Pastikan elemen ditemukan sebelum mengubah teksnya
+  if (namaSpan) {
+    namaSpan.innerText = `${pronoun} ${nama},`; // Gunakan template literal (``) yang benar
+  } else {
+    console.warn("Elemen '.hero h4 span' tidak ditemukan.");
+  }
+</script>
+
 
   </body>
 </html>
