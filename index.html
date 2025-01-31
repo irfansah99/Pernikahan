@@ -644,22 +644,30 @@
 
   // Pilih elemen yang akan diubah
   const namaSpan = document.querySelector('.hero h4 span');
+  const namaInput = document.querySelector('#nama');
 
   // Pastikan elemen ditemukan sebelum mengubah teksnya
   if (namaSpan) {
-    let displayText = `${pronoun} ${nama},`.trim();
+    let displayText = `${pronoun} ${nama}`.trim();
 
-    // Pastikan tanda koma tidak berdiri sendiri di akhir teks
-    if (displayText.endsWith(',')) {
-      displayText = displayText.replace(/,\s*$/, ',');
+    // Pastikan tanda koma tidak berdiri sendiri jika nama kosong
+    if (nama) {
+      displayText += ',';
     }
 
     namaSpan.innerText = displayText;
   } else {
     console.warn("Elemen '.hero h4 span' tidak ditemukan.");
   }
-  document.querySelector('#nama').value=nama;
+
+  // Pastikan input dengan id #nama ditemukan sebelum mengisi nilainya
+  if (namaInput) {
+    namaInput.value = nama;
+  } else {
+    console.warn("Elemen '#nama' tidak ditemukan.");
+  }
 </script>
+
 
 
   </body>
