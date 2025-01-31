@@ -479,48 +479,43 @@ display: table;
   background-color: #0056b3;
 }
 
-/* Gaya untuk bagian seeyou */
-.seeyou {
-  padding: 4rem 0;
-  background-color: #fff;
+/* Styling untuk bagian See You */
+.Seeyou {
+  background: #444; /* Warna latar belakang lembut */
+  padding: 80px 0; 
   text-align: center;
+  
 }
 
-.seeyou img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 1rem;
+.Seeyou img {
+  width: 600px; 
+  height: 600px;
+  border-radius: 15px; 
+  object-fit: cover; /* Menjaga rasio gambar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
 }
 
-.seeyou h3 {
-  font-size: 2rem;
-  color: #007bff;
-  margin-top: 1rem;
+
+.Seeyou p {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.6;
+  margin: 20px 0;
+  padding: 0 20px;
 }
 
-.seeyou h2 {
+.Seeyou h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.Seeyou h2 {
+  font-family: 'Sacramento', cursive;
   font-size: 2.5rem;
-  color: #333;
-  margin-top: 0.5rem;
+  color: #d63384; 
+  margin-top: 10px;
 }
-
-.seeyou p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
-}
-/* Pastikan elemen tidak mempengaruhi layout saat diberi animasi */
-[data-aos] {
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-[data-aos].aos-animate {
-  transform: none !important;  /* Pastikan tidak ada transformasi yang mengubah ukuran */
-}
-
 
 
 
@@ -536,7 +531,6 @@ footer a {
   color: var(--bg);
   font-weight: bold;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
 footer a:hover {
@@ -561,7 +555,7 @@ footer a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: 5rem;
+  inline-size: 3rem;
   aspect-ratio: 1;
   font-size: 2rem;
   color: #737373;
