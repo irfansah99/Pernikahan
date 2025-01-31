@@ -640,15 +640,15 @@
 <script>
   // Ambil parameter dari URL
   const urlParams = new URLSearchParams(window.location.search);
-  const nama = urlParams.get('n') || ''; // Jika tidak ada, gunakan string kosong
-  const pronoun = urlParams.get('p') || ''; // Jika tidak ada, gunakan string kosong
+  const nama = urlParams.get('n') || ''; 
+  const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i'; 
 
   // Pilih elemen yang akan diubah
   const namaSpan = document.querySelector('.hero h4 span');
 
   // Pastikan elemen ditemukan sebelum mengubah teksnya
   if (namaSpan) {
-    namaSpan.innerText = `${pronoun} ${nama}`; // Gunakan template literal (``) yang benar
+    namaSpan.innerText = `${pronoun} ${nama},`.replace(/ .$/,','); 
   } else {
     console.warn("Elemen '.hero h4 span' tidak ditemukan.");
   }
