@@ -423,8 +423,9 @@ display: table;
   width: 600px; 
   height: 600px;
   border-radius: 15px; 
-  object-fit: cover; /* Menjaga rasio gambar */
+  object-fit: contain; /* Menjaga gambar agar tidak terpotong */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  background-color: #f0f0f0; /* Tambahkan warna latar belakang jika perlu */
 }
 
 
