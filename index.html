@@ -32,7 +32,7 @@
     <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
       <main>
         <div class="snowfall" aria-hidden="true"></div>
-        <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
+        <h4>Kepada Bapak/Ibu/Saudara/i,<span></span></h4>
         <h1>Alfian & Dian</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam:</p>
         <div class="simply-countdown"></div>
@@ -641,6 +641,9 @@
       const urlparam = new URLSearchParams(window.location.search);
       const nama = urlparam.get('nama');
       console.log(nama);
+
+      const namaspan = document.querySelector('.hero h4 span');
+      namaspan.innerText=nama;
     </script>
 
   </body>
