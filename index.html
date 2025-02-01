@@ -44,27 +44,91 @@
     <nav class="navbar-expand-md navbar bg-transparent sticky-top Mynavbar">
       <div class="container">
         <a class="navbar-brand" href="#">Aldi</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Aldi</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#home">Home</a>
-              <a class="nav-link" href="#info">Info</a>
-              <a class="nav-link" href="#story">Story</a>
-              <a class="nav-link" href="#gallery">Gallery</a>
-              <a class="nav-link" href="#rspv">RSPV</a>
-              <a class="nav-link" href="#gifts">Gifts</a>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#info">Info</a>
+            <a class="nav-link" href="#story">Story</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="#rspv">RSPV</a>
+            <a class="nav-link" href="#gifts">Gifts</a>
           </div>
         </div>
       </div>
     </nav>
+    
+
+    <nav class="navbar-expand-md navbar bg-transparent navbar_hp" style="display:none;">
+      <ul>
+        <li class="active">
+          <a href="#home">
+              <span class="icon">
+                  <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">Home</span>
+          </a>
+      </li>
+      <li>
+          <a href="#info">
+              <span class="icon">
+                  <ion-icon name="information-circle-outline"></ion-icon>
+              </span>
+              <span class="text">Info</span>
+          </a>
+      </li>
+      <li>
+          <a href="#story">
+              <span class="icon">
+                  <ion-icon name="journal-outline"></ion-icon>
+              </span>
+              <span class="text">Story</span>
+          </a>
+      </li>
+      <li>
+          <a href="#gallery">
+              <span class="icon">
+                  <ion-icon name="camera-outline"></ion-icon>
+              </span>
+              <span class="text">Gallery</span>
+          </a>
+      </li>
+      <li>
+          <a href="#rspv">
+              <span class="icon">
+                  <ion-icon name="checkmark-done-outline"></ion-icon>
+              </span>
+              <span class="text">Rspv</span>
+          </a>
+      </li>
+      <li>
+          <a href="#gifts">
+              <span class="icon">
+                  <ion-icon name="gift-outline"></ion-icon>
+              </span>
+              <span class="text">Gifts</span>
+          </a>
+      </li>
+      
+      </ul>
+    </nav>
+    
+    <script>
+    const items = document.querySelectorAll('.navbar_hp li'); 
+    
+    items.forEach((item) => {
+        item.addEventListener('click', function () {
+            items.forEach(i => i.classList.remove('active')); 
+            this.classList.add('active'); 
+        });
+    });
+    
+
+    
+    </script>
+    
 
     <section id="home" class="home overflow-hidden">
       <div class="container" >
@@ -603,7 +667,7 @@
       const audioiconwrapper=document.querySelector('.audio-icon-wrapper');
       const song=document.querySelector('#song');
       const audioicon=document.querySelector('.audio-icon-wrapper i')
-
+      const nav = document.querySelector('.navbar_hp');
       let isPlaying=false;
       function disablescroll(){
         scrollTop = window.pageXOffset||document.documentElement.scrollTop;
@@ -619,8 +683,12 @@
         window.onscroll=function(){}
         rootelement.style.scrollBehavior='smooth';
         playaudio();
+
       }
       function playaudio(){
+        if (window.innerWidth <= 768) {
+    nav.style.display = 'flex'; 
+  }
       song.volume=0.3;
       song.play();
       audioiconwrapper.style.display='flex';
