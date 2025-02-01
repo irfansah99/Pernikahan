@@ -37,14 +37,20 @@ body {
 
 .hero h1 .hero h4 .hero p{
   text-shadow: var(--shadow);
+  text-transform: uppercase;
 }
 .hero h1 {
   font-family: "sacramento", cursive;
   font-size: 6rem;
   color: var(--pink);
 }
+.hero h3{
+  font-family: "Bona Nova SC", serif;
+  text-transform: uppercase;
+}
 .hero h4 {
   font-size: 1.6rem;
+  margin-top: 1rem;
 }
 .hero p {
   font-size: 1.4rem;
