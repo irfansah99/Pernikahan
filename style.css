@@ -92,7 +92,6 @@ body {
   height: 100%;
   background-size: cover;
   background-position: center;
-  aspect-ratio: 1/2;
   animation: slide 7s infinite; /* Animasi latar belakang */
 }
 @keyframes slide {
@@ -185,8 +184,8 @@ body {
   height: 100%;
   background-size: cover;
   background-position: center;
-  aspect-ratio: 1/2;
-  animation: slide 7s infinite; /* Animasi latar belakang */
+
+  animation: slide 7s infinite; 
 }
 @keyframes slide {
   0% {
@@ -902,6 +901,7 @@ footer a:hover {
     bottom: 8rem;
     right: 2rem;
   }
+  
 
 }
 
@@ -933,12 +933,22 @@ footer a:hover {
     width: 300px;
     height: 300px;
   }
-    .left-content {
-    flex: 0.5; 
+  .groom-section .left-content {
+    flex: 0.5;  /* Mengatur lebar bagian kiri di groom-section */
   }
-  .right-content {
-    flex: 2.5;
+  
+  .groom-section .right-content {
+    flex: 2.5;  /* Mengatur lebar bagian kanan di groom-section */
   }
+  
+  .bridge .left-content {
+    flex: 2.5;  /* Mengatur lebar bagian kiri di bridge */
+  }
+  
+  .bridge .right-content {
+    flex: 0.5;  /* Mengatur lebar bagian kanan di bridge */
+  }
+  
 }
 
 
