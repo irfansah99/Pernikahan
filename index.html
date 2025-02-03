@@ -35,7 +35,8 @@
         <h1>Alfian & Dian</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam:</p>
         <div class="simply-countdown"></div>
-        <h4>Yth. <span></span><span></span></span></h4>
+        <h4>Yth.</h4>
+        <h4><span></span><span></span></span></h4>
         <a href="#home" class="btn btn-lg mt-4" onclick="enablescroll()">Lihat Undangan</a>
       </main>
     </section>
@@ -61,7 +62,7 @@
     </nav>
     
 
-    <nav class="navbar-expand-md navbar bg-transparent navbar_hp" style="display:none;">
+    <nav class="navbar-expand-md navbar bg-transparent  navbar_hp" style="display:none;">
       <ul>
         <li class="active">
           <a href="#home">
@@ -126,7 +127,21 @@
     });
     
 
+      window.addEventListener("scroll", function () {
+    const hero = document.getElementById("hero"); // Ambil elemen hero
+    const navbarHp = document.querySelector(".navbar_hp"); // Navbar HP
+
+    // Ambil posisi hero di layar
+    const heroRect = hero.getBoundingClientRect();
     
+    if (heroRect.top <= 0 && heroRect.bottom > 50) {
+      // Jika hero masih terlihat, sembunyikan navbar
+      navbarHp.style.display = "none";
+    } else {
+      // Jika user scroll ke bawah, tampilkan navbar kembali
+      navbarHp.style.display = "block"; // Untuk navbar HP
+    }
+  });
     </script>
         <section id="home" class="home overflow-hidden">
           <div class="container">
@@ -152,8 +167,8 @@
       </div>
     </section>
 
-    <section class="groom-section">
-      <div class="left-content">
+    <section class="groom-section overflow-hidden">
+      <div class="left-content fw-bold">
         <h2>The</h2>
         <h1 class="vertical-text">Groom</h1>
       </div>
@@ -178,7 +193,7 @@
       </div>
     </section>
     
-    <section class="bridge">
+    <section class="bridge overflow-hidden">
       <div class="left-content">
         <div class="img"></div>
         <div class="overlay-text">
@@ -187,7 +202,7 @@
           ibu siti</p>
         </div>
       </div>
-      <div class="right-content">
+      <div class="right-content fw-bold">
         <h2>The</h2>
         <h1 class="vertical-text">Bridge</h1>
       </div>
