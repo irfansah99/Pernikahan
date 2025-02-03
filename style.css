@@ -12,12 +12,230 @@ body {
   font-family: "work sans", sans-serif;
   min-height: 4000px;
 }
+.home {
+  background-image: var(--bg-image, url('img/dian&pian.jpeg'));
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  flex-direction: column; /* Membuat elemen di dalam .home disusun secara vertikal */
+  justify-content: flex-end; /* Menempatkan elemen di bagian bawah */
+  align-items: center; /* Memusatkan elemen secara horizontal */
+  text-align: center; /* Memusatkan teks */
+}
+
+.home h4,
+.home h2,
+.home p {
+  color: white; /* Warna teks putih untuk kontras dengan latar belakang */
+  margin: 0; /* Menghilangkan margin untuk membuat posisi lebih rapih */
+}
+
+.home h4 {
+  font-size: 1.5rem; /* Ukuran font h4 */
+}
+
+.home h2 {
+  font-size: 2.5rem; /* Ukuran font h2 */
+}
+
+.home p {
+  font-size: 1.2rem; /* Ukuran font p */
+  margin-bottom: 10px; /* Memberi jarak antara p dan h2 */
+}
+
+
+
+.arrum {
+  background-image: var(--bg-image, url('img/image_870x_65a5f36290ec8.webp'));
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; 
+  background-size: cover;
+  font-weight: bold;
+}
+.groom-section {
+  display: flex;
+  height: 100vh; 
+}
+
+/* Bagian kiri */
+.groom-section .left-content {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  transition: flex 0.3s ease-in-out; 
+}
+
+.groom-section .left-content h1 {
+  writing-mode: vertical-rl; 
+  transform: rotate(180deg); 
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+
+.groom-section .right-content {
+  flex: 2; 
+  position: relative;
+  transition: flex 0.3s ease-in-out; 
+}
+
+.groom-section .right-content .img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1/2;
+  animation: slide 7s infinite; /* Animasi latar belakang */
+}
+@keyframes slide {
+  0% {
+    background-image: url(img/dian.jpg); /* Gambar pertama */
+  }
+  33% {
+    background-image: url(img/pian.jpg); /* Gambar kedua */
+  }
+  66% {
+    background-image: url(img/dian&pian.jpeg); /* Gambar ketiga */
+  }
+  100% {
+    background-image: url(img/dian.jpg); /* Kembali ke gambar pertama */
+  }
+}
+
+
+.groom-section .overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.groom-section .overlay-text h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.groom-section .overlay-text p {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+}
+
+
+.and {
+  text-align: center; 
+  background-color: #0b0a0a;
+  height: 150px;
+  
+}
+
+.and h1 {
+  font-size: 10rem; /* Ukuran font yang sesuai */
+  color: white;
+  font-family: "sacramento", cursive;
+}
+.bridge {
+  display: flex;
+  height: 100vh; 
+}
+
+/* Bagian kiri */
+.bridge .right-content {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  transition: flex 0.3s ease-in-out; 
+}
+
+.bridge .right-content h1 {
+  writing-mode: vertical-rl; 
+  transform: rotate(180deg); 
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+
+.bridge .left-content {
+  flex: 2; 
+  position: relative;
+  transition: flex 0.3s ease-in-out; 
+}
+
+.bridge .left-content .img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1/2;
+  animation: slide 7s infinite; /* Animasi latar belakang */
+}
+@keyframes slide {
+  0% {
+    background-image: url(img/dian.jpg); /* Gambar pertama */
+  }
+  33% {
+    background-image: url(img/pian.jpg); /* Gambar kedua */
+  }
+  66% {
+    background-image: url(img/dian&pian.jpeg); /* Gambar ketiga */
+  }
+  100% {
+    background-image: url(img/dian.jpg); /* Kembali ke gambar pertama */
+  }
+}
+
+
+.bridge .overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.bridge .overlay-text h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.bridge .overlay-text p {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+}
+
+
+
+
 .hero {
   min-height: 100vh;
   position: relative;
-  overflow: hidden; /* Tambahan untuk memastikan elemen anak tidak keluar dari area .hero */
+  overflow: hidden; 
 }
-
 .hero::before {
   content: '';
   position: absolute;
@@ -67,6 +285,7 @@ body {
   animation: none;
   transform: scale(1);
 }
+
 .Mynavbar{
   background-color: rgba(255, 255, 255, 0.3) !important;
   backdrop-filter: blur(4px);
@@ -83,57 +302,7 @@ body {
 .Mynavbar .nav-link{
   text-transform: uppercase;
 }
-.home{
-  background-image: url(img/bg.png);
-  background-size: cover;
-  min-height: 100vh;
-  background-position: center; /* Pusatkan gambar */
-  background-repeat: no-repeat; /* Hindari pengulangan gambar */
-  margin-top: -6rem;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-}
-.home h2{
-  color: var(--pink);
-  font-family: 'sacramento';
-  font-size: 5rem;
-  font-weight: bold;
-}
-.home h3{
-  color: #444;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-.home p{
-  font-size: 1.1rem;
-  color: #666;
-}
-.home .couple{
-  margin-top: 100px;
-}
-.home .couple h3{
-  font-family: 'sacramento';
-  font-size: 2.4rem;
-  color: var(--pink);
-}
-.home .couple img{
-  width: 100%;
-}
-.home .heart{
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  display: flex;
-  border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(65px);
-}
-.home .heart i{
-  margin: auto;
-  color: var(--pink);
-}
+
 .info{
   background-color: var(--bg);
   color: white;
@@ -141,7 +310,6 @@ body {
   padding-bottom: 10rem;
 }
 .rspv h2,
-.home h2,
 .gallery h2,
 .info h2,
 .story h2,
@@ -180,7 +348,8 @@ body {
 .story,
 .gallery,
 .gifts,
-.rspv{
+.rspv,
+.arrum{
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
@@ -336,17 +505,7 @@ display: table;
   border: 1px solid white;
 }
 
-.btn_move {
-  animation: moveButton 2s infinite ease-in-out;
-  color: white;
-  background-color: #007bff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  border-radius: 10px ;
-}
+
 
 @keyframes moveButton {
   0% { transform: translateX(0) scale(1); }
@@ -354,10 +513,7 @@ display: table;
   100% { transform: translateX(0) scale(1); }
 }
 
-.btn_move:hover {
-  animation: none;
-  transform: scale(1);
-}
+
 .copy-button {
   background-color: #007bff;
   color: white;
@@ -367,6 +523,7 @@ display: table;
   cursor: pointer;
   font-size: 14px;
   text-decoration: none;
+  animation: moveButton 2s infinite ease-in-out;
 }
 
 .copy-button:hover {
@@ -413,15 +570,89 @@ display: table;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  position: absolute;
+  top: 130px;
 }
-
+.map-button{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 .gifts .copy-button:hover {
   background-color: #0056b3;
+
+}
+.gifts .card {
+  height: 200px;
+  width: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #007bff, white); /* Gradasi biru ke cyan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white; /* Agar teks lebih kontras */
 }
 
-/* Styling untuk bagian See You */
+#gifts #modalBank img {
+  position: absolute;
+  top: 10px;
+  right: 20px; 
+  width: 100px;
+  height: 70px;
+}
+
+#gifts #modalBank h5 {
+  position: absolute;
+  top: 50px;
+  left: 15px; 
+  font-size: 1.8rem;
+  color: #444;
+  font-family: "Bona Nova SC", serif;
+}
+
+#gifts #modalBank h3 {
+  font-family: "Bona Nova SC", serif;
+  position: absolute;
+  top: 90px;
+  color: #444;
+}
+
+#gifts #modalGift h5{
+  font-size: 1.3rem;
+  color: #444;
+  font-family: "Bona Nova SC", serif;
+}
+#gifts #modalGift p {
+  font-size: 1rem;
+  color: #444;
+  font-family: "Bona Nova SC", serif;
+}
+
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center; 
+}
+
+
 .Seeyou {
-  background: #444; /* Warna latar belakang lembut */
+  background: #444;
   padding: 80px 0; 
   text-align: center;
   
@@ -434,6 +665,9 @@ display: table;
   object-fit: contain; /* Menjaga gambar agar tidak terpotong */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
   background-color: #f0f0f0; /* Tambahkan warna latar belakang jika perlu */
+  border-style: outset;
+  border-color: #007bff;
+  border-width: 10px;
 }
 
 
@@ -482,6 +716,7 @@ footer a:hover {
   gap: 1.25rem;
   padding: 0;
   list-style: none;
+  margin-bottom: 100px;
 }
 
 
@@ -603,9 +838,7 @@ footer a:hover {
 
 
 @media(max-width:1200px){
-  .home .heart{
-    transform: translateX(-50%) translateY(45px);
-  }
+
 }
 
 /* laptop */
@@ -615,9 +848,6 @@ footer a:hover {
   }
   .simply-countdown > .simply-section{
     padding: 70px;
-  }
-  .home .heart{
-    display: none;
   }
   .timeline::before{
     left: 60px;
@@ -702,6 +932,12 @@ footer a:hover {
   .Seeyou img {
     width: 300px;
     height: 300px;
+  }
+    .left-content {
+    flex: 0.5; 
+  }
+  .right-content {
+    flex: 2.5;
   }
 }
 
