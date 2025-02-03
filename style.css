@@ -82,7 +82,9 @@ body {
   font-size: 3rem;
   margin-top: 20px;
 }
-
+.groom-section .left-content h1 h2{
+  font-weight: bold; 
+}
 
 .groom-section .right-content {
   flex: 2; 
@@ -311,6 +313,7 @@ body {
   padding-top: 10rem;
   padding-bottom: 10rem;
 }
+
 .rspv h2,
 .gallery h2,
 .info h2,
