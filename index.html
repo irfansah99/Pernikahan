@@ -23,7 +23,7 @@
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
   </head>
@@ -263,7 +263,7 @@ createSlider(".bridge-slider", 3);
                   </div>
                   <div class="col-md-6">
                     <i class="bi bi-calendar3 d-block"></i>
-                    <span>Minggu, 4 April 2025</span>
+                    <span>Minggu, 4 Mei 2025</span>
                   </div>
                 </div>
               </div>
@@ -286,7 +286,7 @@ createSlider(".bridge-slider", 3);
                   </div>
                   <div class="col-md-6">
                     <i class="bi bi-calendar3 d-block"></i>
-                    <span>Minggu, 4 April 2025</span>
+                    <span>Minggu, 4 Mei 2025</span>
                   </div>
                 </div>
               </div>
@@ -306,11 +306,6 @@ createSlider(".bridge-slider", 3);
           <div class="col-md-8 col-10 text-center">
             <span>Bagaimana Kami Saling Mencintai</span>
             <h2>Cerita Kami</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae voluptatum nesciunt, quisquam possimus
-              reiciendis vero voluptates, sit sequi distinctio veritatis repellendus tempore dicta esse! Sed quibusdam voluptatum
-              nemo sequi?
-            </p>
           </div>
         </div>
     
@@ -391,9 +386,6 @@ createSlider(".bridge-slider", 3);
           <div class="col-md-8 col-10 text-center mb-4">
             <span class="d-block text-uppercase text-muted">Memori Kisah Kami</span>
             <h2 class="fw-bold">Galeri Foto</h2>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae voluptatum nesciunt, quisquam possimus.
-            </p>
           </div>
         </div>
     
@@ -494,27 +486,29 @@ createSlider(".bridge-slider", 3);
             </div>
           </form>
           <div class="row justify-content-center mt-5">
-            <div class="col md-6">
-              <div id="disqus_thread"></div>
-                <script>
-                    /**
-                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                    /*
-                    var disqus_config = function () {
-                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                    };
-                    */
-                    (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://ad-wedding-1.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
+            <div class="komentar">
+              <div class="container-fluid">
+                  <h1 class="mb-3 text-center ">Give your wishes to us</h1>
+          
+                  <form id="commentForm" class="mb-3">
+                      <div class="mb-2">
+                          <label for="pengirim" class="form-label">Nama</label>
+                          <input type="text" class="form-control" id="pengirim" name="pengirim" required>
+                      </div>
+                      <div class="mb-2">
+                          <label for="isi" class="form-label">Wish</label>
+                          <textarea class="form-control" id="isi" name="isi" rows="3" required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100">Kirim</button>
+                  </form>
+          
+                  <div class="comment-container">
+                      <div id="comments-list"></div>
+                  </div>
+                  
+                  <div class="d-flex justify-content-center mt-3" id="pagination"></div>
+              </div>
+          </div>
           </div>
 
         </div>
@@ -536,7 +530,7 @@ createSlider(".bridge-slider", 3);
                 </div>
     
                 <div class="text-center">
-                  <!-- Button trigger modal -->
+              
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBank">
                     Bank Transfer
                   </button>
@@ -544,7 +538,7 @@ createSlider(".bridge-slider", 3);
                     Send Gift
                   </button>
                 
-                  <!-- Modal Bank Transfer -->
+              
                   <div class="modal fade" id="modalBank" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalBankLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -553,7 +547,7 @@ createSlider(".bridge-slider", 3);
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          <div class="card">
+                          <div class="card ">
                             <span><img src="img/Logo BCA_Biru.png" alt="bca"></span>
                             <h5>Dian Pratiwi</h5>
                             <h3 class="text-center justify-content-center">17220378</h3>
@@ -566,7 +560,7 @@ createSlider(".bridge-slider", 3);
                     </div>
                   </div>
                 
-                  <!-- Modal Gift -->
+             
                   <div class="modal fade" id="modalGift" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalGiftLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -817,6 +811,93 @@ createSlider(".bridge-slider", 3);
   });
 });
     </script>
+<script>
+  let comments = [];
+  let currentPage = 1;
+  const perPage = 5;
+
+  async function fetchComments() {
+      try {
+          const response = await axios.get('https://67a2f63d409de5ed5256df16.mockapi.io/komentar');
+          comments = response.data.reverse();
+          renderComments();
+      } catch (error) {
+          console.error("Error fetching comments:", error);
+      }
+  }
+
+  function renderComments() {
+      const commentsList = document.getElementById("comments-list");
+      commentsList.innerHTML = "";
+
+      const start = (currentPage - 1) * perPage;
+      const end = start + perPage;
+      const paginatedComments = comments.slice(start, end);
+
+      paginatedComments.forEach(comment => {
+          const createdAt = new Date(comment.createdAt).toLocaleString("id-ID", {
+              weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+          });
+          
+          const commentElement = document.createElement("div");
+          commentElement.classList.add("comment-box");
+          commentElement.innerHTML = `
+              <img src="https://i.pinimg.com/736x/8f/9d/c9/8f9dc9e74ff16d035d7e85f3cf890ea3.jpg" alt="Avatar">
+              <div class="comment-body">
+                  <div class="comment-header">${comment.pengirim}</div>
+                  <p>${comment.isi}</p>
+                  <span class="comment-time">🕒 ${createdAt}</span>
+              </div>
+          `;
+          commentsList.appendChild(commentElement);
+      });
+      renderPagination();
+  }
+
+  function renderPagination() {
+      const pagination = document.getElementById("pagination");
+      pagination.innerHTML = "";
+      const totalPages = Math.ceil(comments.length / perPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+          const pageButton = document.createElement("button");
+          pageButton.classList.add("btn", "btn-secondary", "mx-1");
+          if (i === currentPage) {
+              pageButton.classList.add("btn-primary");
+          }
+          pageButton.textContent = i;
+          pageButton.addEventListener("click", () => {
+              currentPage = i;
+              renderComments();
+          });
+          pagination.appendChild(pageButton);
+      }
+  }
+
+  async function sendData(event) {
+      event.preventDefault();
+      const pengirim = document.getElementById('pengirim').value.trim();
+      const isi = document.getElementById('isi').value.trim();
+      if (!pengirim || !isi) {
+          alert("Harap isi semua kolom!");
+          return;
+      }
+      try {
+          const response = await axios.post('https://67a2f63d409de5ed5256df16.mockapi.io/komentar', {
+              pengirim, isi, createdAt: new Date().toISOString()
+          });
+          comments.unshift(response.data);
+          currentPage = 1;
+          renderComments();
+          document.getElementById('commentForm').reset();
+      } catch (error) {
+          console.error('Terjadi kesalahan:', error);
+      }
+  }
+
+  document.getElementById('commentForm').addEventListener('submit', sendData);
+  window.onload = fetchComments;
+</script>
 
 <script>
   const urlParams = new URLSearchParams(window.location.search);
@@ -825,10 +906,17 @@ createSlider(".bridge-slider", 3);
 
   const namaSpan = document.querySelector('.hero h4 span');
   const namaInput = document.querySelector('#nama');
+  const namaInput1 = document.querySelector('#pengirim');
+
   if (namaSpan) {
     let displayText = `${pronoun} ${nama}`.trim();
     namaSpan.innerText = displayText;
   } 
+  if (namaInput1) {
+    namaInput1.value = nama;
+  } else {
+    console.warn("Elemen '#nama' tidak ditemukan.");
+  }
 
   if (namaInput) {
     namaInput.value = nama;
