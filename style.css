@@ -940,19 +940,19 @@ footer a:hover {
     height: 300px;
   }
   .groom-section .left-content {
-    flex: 0.5;  /* Mengatur lebar bagian kiri di groom-section */
+    flex: 0.5;  
   }
   
   .groom-section .right-content {
-    flex: 2.5;  /* Mengatur lebar bagian kanan di groom-section */
+    flex: 2.5;  
   }
   
   .bridge .left-content {
-    flex: 2.5;  /* Mengatur lebar bagian kiri di bridge */
+    flex: 2.5;  
   }
   
   .bridge .right-content {
-    flex: 0.5;  /* Mengatur lebar bagian kanan di bridge */
+    flex: 0.5; 
   }
   .and {
     height: 100px;
@@ -964,7 +964,14 @@ footer a:hover {
   .groom-section {
     height: 80vh; 
   }
-  
+  .gifts .card {
+    height: 150px;
+    width: 300px;
+  }
+  .gifts .copy-button {
+    top: 115px;
+  }
+
 }
 
 
