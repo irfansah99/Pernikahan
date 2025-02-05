@@ -29,22 +29,22 @@ body {
 .home h4,
 .home h2,
 .home p {
-  color: var(--bg); /* Warna teks putih untuk kontras dengan latar belakang */
-  margin: 0; /* Menghilangkan margin untuk membuat posisi lebih rapih */
+  color: var(--bg); 
+  margin: 0; 
 }
 
 .home h4 {
-  font-size: 1.5rem; /* Ukuran font h4 */
-}
+  font-size: 1.5rem; 
+
 
 .home h2 {
-  font-size: 2.5rem; /* Ukuran font h2 */
+  font-size: 2.5rem; 
   font-family: "sacramento", cursive;
 }
 
 .home p {
-  font-size: 1.2rem; /* Ukuran font p */
-  margin-bottom: 10px; /* Memberi jarak antara p dan h2 */
+  font-size: 1.2rem; 
+  margin-bottom: 10px; 
 }
 
 
@@ -63,7 +63,7 @@ body {
   height: 100vh; 
 }
 
-/* Bagian kiri */
+
 .groom-section .left-content {
   flex: 1;
   background-color: white;
@@ -144,7 +144,7 @@ margin-top: 100px;
 }
 
 .and h1 {
-  font-size: 10rem; /* Ukuran font yang sesuai */
+  font-size: 10rem; 
   color: white;
   font-family: "sacramento", cursive;
 }
@@ -153,7 +153,6 @@ margin-top: 100px;
   height: 100vh; 
 }
 
-/* Bagian kiri */
 .bridge .right-content {
   flex: 1;
   background-color: white;
@@ -245,7 +244,7 @@ margin-top: 100px;
   background-repeat: no-repeat;
   filter: grayscale();
   z-index: -1;
-  transition: background-image 1s ease; /* Transisi pergantian */
+  transition: background-image 1s ease;
 }
 
 
@@ -461,11 +460,11 @@ display: table;
 }
 
 .gallery .col video {
-  height: auto; /* Menjaga rasio aspek video */
-  max-height: 100%; /* Mengatur tinggi video agar tidak melebihi ukuran gambar */
-  object-fit: cover; /* Menyesuaikan video agar menutupi area dengan rasio yang sesuai */
+  height: auto; 
+  max-height: 100%; 
+  object-fit: cover; 
 }
-/* Gambar Galeri */
+
 .gallery .img-fluid {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -476,7 +475,7 @@ display: table;
   filter: grayscale(100%) hue-rotate(180deg);
 }
 
-/* Jarak Antar Kolom */
+
 .row.g-4 > * {
   margin-bottom: 20px;
 }
@@ -571,7 +570,7 @@ display: table;
 .copy-button:hover {
   background-color: #0056b3;
 }
-/* Gaya untuk bagian gifts */
+
 .gifts {
   padding: 4rem 0;
   background-color: #f8f9fa;
@@ -625,9 +624,9 @@ display: table;
   text-align: center;
   padding: 15px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #007bff, white); /* Gradasi biru ke cyan */
+  background: linear-gradient(135deg, #007bff, white); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: white; /* Agar teks lebih kontras */
+  color: white;
 }
 
 #gifts #modalBank img {
@@ -694,9 +693,9 @@ display: table;
   width: 600px; 
   height: 600px;
   border-radius: 15px; 
-  object-fit: contain; /* Menjaga gambar agar tidak terpotong */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-  background-color: #f0f0f0; /* Tambahkan warna latar belakang jika perlu */
+  object-fit: contain; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  background-color: #f0f0f0; 
   border-style: outset;
   border-color: #007bff;
   border-width: 10px;
@@ -740,7 +739,6 @@ footer a:hover {
 
 
 
-/* Gaya untuk ikon media sosial */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -813,7 +811,7 @@ footer a:hover {
       background: var(--bg-color);
       display: flex;
       justify-content: center;
-      padding: 6px 0; /* Kurangi padding untuk mengurangi tinggi */
+      padding: 6px 0; 
       box-shadow: 0 -2px 10px var(--shadow-color);
       z-index: 9999;
       mix-blend-mode: difference;
@@ -840,18 +838,18 @@ footer a:hover {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 6px; /* Kurangi padding di dalam elemen */
+      padding: 6px; 
       transition: color 0.3s ease-in-out;
   }
 
   .navbar_hp .icon {
-      font-size: 20px; /* Kurangi ukuran ikon */
+      font-size: 20px; 
       transition: transform 0.3s ease-in-out;
   }
 
   .navbar_hp .text {
-      font-size: 10px; /* Kurangi ukuran teks */
-      margin-top: 2px; /* Kurangi jarak antara ikon dan teks */
+      font-size: 10px; 
+      margin-top: 2px; 
       opacity: 0.8;
       transition: opacity 0.3s ease-in-out;
   }
@@ -861,7 +859,7 @@ footer a:hover {
   }
 
   .navbar_hp li.active .icon {
-      transform: scale(1.1); /* Sedikit perkecil efek aktif */
+      transform: scale(1.1); 
   }
 
 
@@ -1011,3 +1009,4 @@ footer a:hover {
 }
 
 
+}
