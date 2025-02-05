@@ -311,7 +311,8 @@ margin-top: 100px;
 .info h2,
 .story h2,
 .gifts h2,
-.Seeyou h2{
+.Seeyou h2,
+.komentar h1{
   color: var(--pink);
   font-family:  'sacramento';
   font-size: 5rem;
@@ -501,9 +502,53 @@ display: table;
   color: black;
   border: 1px solid white;
 }
+.komentar {
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
+}
 
+.comment-container {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+}
+.comment-box {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+.comment-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.comment-body {
+  flex-grow: 1;
+  overflow-wrap: break-word;
+}
+.comment-body p {
+  color: black;
+  font-weight: 5rem;
+}
+.comment-header {
+  font-weight: bold;
+  color:black;
+}
+.comment-time {
+  font-size: 0.9em;
+  color: gray;
+}
 
-
+.komentar h1{
+  font-size: 4rem;
+}
 @keyframes moveButton {
   0% { transform: translateX(0) scale(1); }
   50% { transform: translateX(5px) scale(1.1); }
@@ -532,10 +577,7 @@ display: table;
   background-color: #f8f9fa;
 }
 
-.gifts .card {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .gifts .card-header {
   background-color: #007bff;
@@ -547,17 +589,7 @@ display: table;
   padding: 1.5rem;
 }
 
-.gifts .rekening-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
 
-.gifts .rekening-info i {
-  font-size: 2rem;
-  color: #007bff;
-}
 
 .gifts .copy-button {
   background-color: #007bff;
@@ -611,7 +643,7 @@ display: table;
   top: 50px;
   left: 15px; 
   font-size: 1.8rem;
-  color: #444;
+  color: white;
   font-family: "Bona Nova SC", serif;
 }
 
@@ -619,17 +651,17 @@ display: table;
   font-family: "Bona Nova SC", serif;
   position: absolute;
   top: 90px;
-  color: #444;
+  color: white;
 }
 
 #gifts #modalGift h5{
   font-size: 1.3rem;
-  color: #444;
+  color: white;
   font-family: "Bona Nova SC", serif;
 }
 #gifts #modalGift p {
   font-size: 1rem;
-  color: #444;
+  color: white;
   font-family: "Bona Nova SC", serif;
 }
 
@@ -644,9 +676,13 @@ display: table;
 .modal-content {
   padding: 20px;
   border-radius: 10px;
-  text-align: center; 
 }
 
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .Seeyou {
   background: #444;
@@ -973,3 +1009,5 @@ footer a:hover {
   }
 
 }
+
+
