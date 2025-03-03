@@ -62,69 +62,77 @@
     </nav>
     
 
-    <nav class="navbar-expand-md navbar bg-transparent  navbar_hp" style="display:none;">
+    <nav class="navbar-expand-md navbar bg-transparent navbar_hp"  style="display:none;">
       <ul>
         <li class="active">
           <a href="#home">
-              <span class="icon">
-                  <ion-icon name="home-outline"></ion-icon>
-              </span>
-              <span class="text">Home</span>
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="text">Home</span>
           </a>
-      </li>
-      <li>
+        </li>
+        <li>
+          <a href="#groom">
+            <span class="icon"><ion-icon name="man-outline"></ion-icon></span>
+            <span class="text">Groom</span>
+          </a>
+        </li>
+        <li>
+          <a href="#bridge">
+            <span class="icon"><ion-icon name="woman-outline"></ion-icon></span>
+            <span class="text">Bride</span>
+          </a>
+        </li>
+        <li>
           <a href="#info">
-              <span class="icon">
-                  <ion-icon name="information-circle-outline"></ion-icon>
-              </span>
-              <span class="text">Info</span>
+            <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+            <span class="text">Info</span>
           </a>
-      </li>
-      <li>
+        </li>
+        <li>
           <a href="#story">
-              <span class="icon">
-                  <ion-icon name="journal-outline"></ion-icon>
-              </span>
-              <span class="text">Story</span>
+            <span class="icon"><ion-icon name="journal-outline"></ion-icon></span>
+            <span class="text">Story</span>
           </a>
-      </li>
-      <li>
+        </li>
+        <li>
           <a href="#gallery">
-              <span class="icon">
-                  <ion-icon name="camera-outline"></ion-icon>
-              </span>
-              <span class="text">Gallery</span>
+            <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+            <span class="text">Gallery</span>
           </a>
-      </li>
-      <li>
+        </li>
+        <li>
           <a href="#rspv">
-              <span class="icon">
-                  <ion-icon name="checkmark-done-outline"></ion-icon>
-              </span>
-              <span class="text">Rspv</span>
+            <span class="icon"><ion-icon name="checkmark-done-outline"></ion-icon></span>
+            <span class="text">Rspv</span>
           </a>
-      </li>
-      <li>
+        </li>
+        <li>
           <a href="#gifts">
-              <span class="icon">
-                  <ion-icon name="gift-outline"></ion-icon>
-              </span>
-              <span class="text">Gifts</span>
+            <span class="icon"><ion-icon name="gift-outline"></ion-icon></span>
+            <span class="text">Gifts</span>
           </a>
-      </li>
-      
+        </li>
       </ul>
     </nav>
     
-    <script>
-    const items = document.querySelectorAll('.navbar_hp li'); 
     
-    items.forEach((item) => {
-        item.addEventListener('click', function () {
-            items.forEach(i => i.classList.remove('active')); 
-            this.classList.add('active'); 
+    <script>
+const navbar = document.querySelector(".navbar_hp ul");
+const items = document.querySelectorAll(".navbar_hp li");
+
+items.forEach(item => {
+    item.addEventListener("click", function () {
+        items.forEach(i => i.classList.remove("active"));
+        this.classList.add("active");
+
+        this.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest"
         });
     });
+});
+
     </script>
 
 
