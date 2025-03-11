@@ -938,6 +938,21 @@ createSlider(".foto-info-slider", 3000); // Slider ini mulai lebih lambat 3 deti
   } else {
     console.warn("Elemen '#nama' tidak ditemukan.");
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+        let sectionId = section.id || section.className; // Gunakan ID atau class sebagai kunci unik
+
+        if (sessionStorage.getItem(sectionId)) {
+            section.style.display = "none"; // Sembunyikan jika sudah pernah diload
+        } else {
+            sessionStorage.setItem(sectionId, "true"); // Tandai section sudah diload
+        }
+    });
+});
+
 </script>
 
 
