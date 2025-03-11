@@ -123,7 +123,7 @@ margin-top: 100px;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  animation: slideLoop3 16s linear infinite;
+  animation: slideLoop3 16s ease-in-out infinite;
 }
 
 .groom-section .slider img {
@@ -217,7 +217,7 @@ margin-top: 100px;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  animation: slideLoop3 16s linear infinite;
+  animation: slideLoop3 16s ease-in-out infinite;
 }
 
 .bridge .slider img {
@@ -290,7 +290,7 @@ margin-top: 100px;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  animation: slideLoop5 24s linear infinite;
+  animation: slideLoop5 24s ease-in-out infinite;
 }
 .foto-info .slider img{
   flex: 1 0 100%;
@@ -1052,12 +1052,12 @@ footer a:hover {
     top: 31px;
   }
   .Seeyou img {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 300px;
  
   }
   .foto-info {
-    width: 450px;
+    width: 350px;
     height: 550px;
   }
   .groom-section .left-content {
