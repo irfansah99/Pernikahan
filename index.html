@@ -167,10 +167,10 @@ items.forEach(item => {
       </div>
       <div class="right-content">
         <div class="slider groom-slider">
-          <img src="img/pian1.webp" id="gambar1" alt="Gambar 1" loading="lazy"> 
-          <img src="img/pian2.webp" id="gambar2" alt="Gambar 2" loading="lazy"> 
-          <img src="img/pian3.webp" id="gambar3" alt="Gambar 3" loading="lazy"> 
-          <img src="img/pian1.webp" id="gambar4" alt="Kloning Gambar 1"loading="lazy" >
+          <img src="img/pian1.webp" id="gambar1" alt="Gambar 1" > 
+          <img src="img/pian2.webp" id="gambar2" alt="Gambar 2" > 
+          <img src="img/pian3.webp" id="gambar3" alt="Gambar 3" > 
+          <img src="img/pian1.webp" id="gambar4" alt="Kloning Gambar 1" >
         </div>
         <div class="overlay-text">
           <h2>R. Alfian, S.Kom.</h2>
@@ -193,10 +193,10 @@ items.forEach(item => {
     <section class="bridge overflow-hidden" id="bridge">
       <div class="left-content">
         <div class="slider bridge-slider">
-          <img src="img/dian1.webp" id="gambar1" alt="Gambar 1" loading="lazy"> 
-          <img src="img/dian2.webp" id="gambar2" alt="Gambar 2" loading="lazy"> 
-          <img src="img/dian3.webp" id="gambar3" alt="Gambar 3" loading="lazy"> 
-          <img src="img/dian1.webp" id="gambar4" alt="Kloning Gambar 1" loading="lazy">
+          <img src="img/dian1.webp" id="gambar1" alt="Gambar 1" > 
+          <img src="img/dian2.webp" id="gambar2" alt="Gambar 2" > 
+          <img src="img/dian3.webp" id="gambar3" alt="Gambar 3" > 
+          <img src="img/dian1.webp" id="gambar4" alt="Kloning Gambar 1" >
         </div>
         <div class="overlay-text">
           <h2>Dian Pratiwi, S.Sos.</h2>
@@ -217,12 +217,12 @@ items.forEach(item => {
           <div class="foto-info-inti">
           <div class="foto-info">
             <div class="slider foto-info-slider">
-            <img src="img/dian&pian1.webp" id="gambar1" alt="Gambar 1" loading="lazy"> 
-            <img src="img/dian&pian2.webp" id="gambar2" alt="Gambar 2" loading="lazy"> 
-            <img src="img/dian&pian3.webp" id="gambar3" alt="Gambar 3" loading="lazy"> 
-            <img src="img/dian&pian4.webp" id="gambar4" alt="Gambar 4" loading="lazy"> 
-            <img src="img/dian&pian5.webp" id="gambar5" alt="Gambar 5" loading="lazy"> 
-            <img src="img/dian&pian1.webp" id="gambar4" alt="Gambar 1" loading="lazy">
+            <img src="img/dian&pian1.webp" id="gambar1" alt="Gambar 1" > 
+            <img src="img/dian&pian2.webp" id="gambar2" alt="Gambar 2" > 
+            <img src="img/dian&pian3.webp" id="gambar3" alt="Gambar 3" > 
+            <img src="img/dian&pian4.webp" id="gambar4" alt="Gambar 4" > 
+            <img src="img/dian&pian5.webp" id="gambar5" alt="Gambar 5" > 
+            <img src="img/dian&pian1.webp" id="gambar4" alt="Gambar 1" >
            </div>
           </div>
         </div>
@@ -290,29 +290,32 @@ items.forEach(item => {
 
     <script>
 
-function createSlider(selector) {
-    let slider = document.querySelector(selector);
-    let slides = slider.children;
-    let index = 0;
-    let totalSlides = slides.length;
-
-    function nextSlide() {
-        index = (index + 1) % totalSlides;
-        slider.style.transition = "transform 0.6s ease-in-out";
-        slider.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    // Beda waktu mulai antar slider untuk mencegah lag
-    setTimeout(() => setInterval(nextSlide, 5000), Math.random() * 2000);
-}
-
-// Jalankan slider setelah halaman selesai dimuat
-document.addEventListener("DOMContentLoaded", function () {
-    createSlider(".groom-slider");
-    createSlider(".bridge-slider");
-});
-
-
+      function createSlider(selector, totalSlides) {
+          let slider = document.querySelector(selector);
+          let index = 0;
+      
+          function nextSlide() {
+              index++;
+              slider.style.transition = "transform 3s ease-in-out";
+              slider.style.transform = `translateX(-${index * 100}%)`;
+      
+             
+              if (index === totalSlides) {
+                  setTimeout(() => {
+                      slider.style.transition = "none"; 
+                      slider.style.transform = "translateX(0%)";
+                      index = 0; 
+                  }, 5000); 
+              }
+          }
+      
+          setInterval(nextSlide, 7000);
+      }
+      
+      
+      createSlider(".groom-slider", 3); 
+      createSlider(".bridge-slider", 3); 
+      createSlider(".foto-info-slider", 5);
       
         </script>
 
@@ -918,7 +921,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.warn("Elemen '#nama' tidak ditemukan.");
   }
-
+  
   document.addEventListener("DOMContentLoaded", function () {
     let sectionKey = "sectionLoaded"; // Kunci penyimpanan di sessionStorage
 
