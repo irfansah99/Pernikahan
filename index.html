@@ -144,7 +144,6 @@ items.forEach(item => {
                  <h4>our wedding</h4>
                  <h2>Alfian dan Dian</h2>
                  <p>4 mei 2025</p>
-    
             </div>
           </div>
         </section>
@@ -168,10 +167,10 @@ items.forEach(item => {
       </div>
       <div class="right-content">
         <div class="slider groom-slider">
-          <img src="img/pian.jpg" id="gambar1" alt="Gambar 1"> 
-          <img src="img/dian.jpg" id="gambar2" alt="Gambar 2"> 
-          <img src="img/dian&pian.jpeg" id="gambar3" alt="Gambar 3"> 
-          <img src="img/pian.jpg" id="gambar4" alt="Kloning Gambar 1">
+          <img src="img/pian1.jpg" id="gambar1" alt="Gambar 1"> 
+          <img src="img/pian2.jpg" id="gambar2" alt="Gambar 2"> 
+          <img src="img/pian3.jpg" id="gambar3" alt="Gambar 3"> 
+          <img src="img/pian1.jpg" id="gambar4" alt="Kloning Gambar 1">
         </div>
         <div class="overlay-text">
           <h2>R. Alfian, S.Kom.</h2>
@@ -194,10 +193,10 @@ items.forEach(item => {
     <section class="bridge overflow-hidden" id="bridge">
       <div class="left-content">
         <div class="slider bridge-slider">
-          <img src="img/dian.jpg" id="gambar1" alt="Gambar 1"> 
-          <img src="img/pian.jpg" id="gambar2" alt="Gambar 2"> 
-          <img src="img/dian&pian.jpeg" id="gambar3" alt="Gambar 3"> 
-          <img src="img/dian.jpg" id="gambar4" alt="Kloning Gambar 1">
+          <img src="img/dian1.jpg" id="gambar1" alt="Gambar 1"> 
+          <img src="img/dian2.jpg" id="gambar2" alt="Gambar 2"> 
+          <img src="img/dian3.jpg" id="gambar3" alt="Gambar 3"> 
+          <img src="img/dian1.jpg" id="gambar4" alt="Kloning Gambar 1">
         </div>
         <div class="overlay-text">
           <h2>Dian Pratiwi, S.Sos.</h2>
@@ -212,40 +211,21 @@ items.forEach(item => {
     
     
 
-    <script>
-
-function createSlider(selector, totalSlides) {
-    let slider = document.querySelector(selector);
-    let index = 0;
-
-    function nextSlide() {
-        index++;
-        slider.style.transition = "transform 5s ease-in-out";
-        slider.style.transform = `translateX(-${index * 100}%)`;
-
-       
-        if (index === totalSlides) {
-            setTimeout(() => {
-                slider.style.transition = "none"; 
-                slider.style.transform = "translateX(0%)";
-                index = 0; 
-            }, 5000); 
-        }
-    }
-
-    setInterval(nextSlide, 7000);
-}
-
-
-createSlider(".groom-slider", 3); 
-createSlider(".bridge-slider", 3); 
-
-
-  </script>
-
     <section id="info" class="info overflow-hidden">
       <div class="container">
         <div class="row justify-content-center">
+          <div class="foto-info-inti">
+          <div class="foto-info">
+            <div class="slider foto-info-slider">
+            <img src="img/dian&pian1.jpeg" id="gambar1" alt="Gambar 1"> 
+            <img src="img/dian&pian2.jpeg" id="gambar2" alt="Gambar 2"> 
+            <img src="img/dian&pian3.jpeg" id="gambar3" alt="Gambar 3"> 
+            <img src="img/dian&pian4.jpeg" id="gambar4" alt="Gambar 4"> 
+            <img src="img/dian&pian5.jpeg" id="gambar5" alt="Gambar 5"> 
+            <img src="img/dian&pian1.jpeg" id="gambar4" alt="Gambar 1">
+           </div>
+          </div>
+        </div>
           <div class="col-md-8 col-10 text-center">
             <h2 class="h2"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">Informasi Acara</h2>
             <p class="alamat"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">Alamat: Gedung biru putih, Rusunawa semper barat. <br>
@@ -307,6 +287,38 @@ createSlider(".bridge-slider", 3);
         </div>
       </div>
     </section>
+
+    <script>
+
+      function createSlider(selector, totalSlides) {
+          let slider = document.querySelector(selector);
+          let index = 0;
+      
+          function nextSlide() {
+              index++;
+              slider.style.transition = "transform 5s ease-in-out";
+              slider.style.transform = `translateX(-${index * 100}%)`;
+      
+             
+              if (index === totalSlides) {
+                  setTimeout(() => {
+                      slider.style.transition = "none"; 
+                      slider.style.transform = "translateX(0%)";
+                      index = 0; 
+                  }, 5000); 
+              }
+          }
+      
+          setInterval(nextSlide, 7000);
+      }
+      
+      
+      createSlider(".groom-slider", 3); 
+      createSlider(".bridge-slider", 3); 
+      createSlider(".foto-info-slider", 5); 
+      
+        </script>
+
     <section id="story" class="story overflow-hidden">
       <div class="container">
         <!-- Judul dan deskripsi bagian -->
@@ -353,7 +365,7 @@ createSlider(".bridge-slider", 3);
               </li>
               <ul class="timeline"data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
                 <li>
-                  <div class="timeline-image"style="background-image: url(img/dian.jpg);" ></div>
+                  <div class="timeline-image"style="background-image: url(img/dian&pian.jpeg);" ></div>
                   <div class="timeline-panel">
                     <div class="timeline-heading">
                       <h3>Lamaran</h3>
@@ -368,7 +380,7 @@ createSlider(".bridge-slider", 3);
                 </li>
 
             <li class="timeline-invert"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-              <div class="timeline-image"style="background-image: url(img/pian.jpg);" ></div>
+              <div class="timeline-image"style="background-image: url(img/dian&pian.jpeg);" ></div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h3>Pernikahan</h3>
@@ -400,41 +412,33 @@ createSlider(".bridge-slider", 3);
         <!-- Bagian Galeri -->
         <div class="row  row-cols-md-4 row-cols-sm-2 row-cols-2 g-4 justify-content-center ">
           <div class="col"data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-            <a href="img/dian.jpg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 1" data-gallery="example-gallery">
-              <img src="img/dian.jpg" alt="Dian Pratiwi SOS 1" class="img-fluid w-100 rounded shadow">
+            <a href="img/hero1.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 1" data-gallery="example-gallery">
+              <img src="img/hero1.jpeg" alt="Dian Pratiwi SOS 1" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-            <a href="img/dian.jpg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 2" data-gallery="example-gallery">
-              <img src="img/dian.jpg" alt="Dian Pratiwi SOS 2" class="img-fluid w-100 rounded shadow">
+            <a href="img/hero2.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 2" data-gallery="example-gallery">
+              <img src="img/hero2.jpeg" alt="Dian Pratiwi SOS 2" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-            <a href="img/dian.jpg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 3" data-gallery="example-gallery">
-              <img src="img/dian.jpg" alt="Dian Pratiwi SOS 3" class="img-fluid w-100 rounded shadow">
+            <a href="img/dian&pian6.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 3" data-gallery="example-gallery">
+              <img src="img/dian&pian6.jpeg" alt="Dian Pratiwi SOS 3" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-            <a href="img/dian.jpg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 4" data-gallery="example-gallery">
-              <img src="img/dian.jpg" alt="Dian Pratiwi SOS 4" class="img-fluid w-100 rounded shadow">
+            <a href="img/dian&pian7.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 4" data-gallery="example-gallery">
+              <img src="img/dian&pian7.jpeg" alt="Dian Pratiwi SOS 4" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-            <a href="img/dian.jpg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 5" data-gallery="example-gallery">
-              <img src="img/dian.jpg" alt="Dian Pratiwi SOS 5" class="img-fluid w-100 rounded shadow">
+            <a href="img/dian&pian8.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 5" data-gallery="example-gallery">
+              <img src="img/dian&pian8.jpeg" alt="Dian Pratiwi SOS 5" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-            <a href="img/pian.jpg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 6" data-gallery="example-gallery">
-              <img src="img/pian.jpg" alt="Dian Pratiwi SOS 6" class="img-fluid w-100 rounded shadow">
-            </a>
-          </div>
-          <div class="col"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
-            <a href="img/dian.mp4" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 6 Video" data-gallery="example-gallery" class="video-link">
-              <video class="img-fluid w-100 rounded shadow" muted>
-                <source src="img/dian.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <a href="img/dian&pian5.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 6" data-gallery="example-gallery">
+              <img src="img/dian&pian5.jpeg" alt="Dian Pratiwi SOS 6" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           
@@ -605,13 +609,8 @@ createSlider(".bridge-slider", 3);
                 <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="700" data-aos-easing="ease-in-out">
                   <div class="col-md-8 col-10 text-center">
                     <span>
-                      <img src="img/dian&pian.jpeg" alt="Foto Pian & Dian">
+                      <img src="img/seeyou.jpeg" alt="Foto Pian & Dian">
                     </span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus beatae voluptatum nesciunt, quisquam possimus
-                      reiciendis vero voluptates, sit sequi distinctio veritatis repellendus tempore dicta esse! Sed quibusdam voluptatum
-                      nemo sequi?
-                    </p>
                     <h3>See you on our wedding day!</h3>
                     <h2>Alfian & Dian</h2>
                   </div>
@@ -629,7 +628,7 @@ createSlider(".bridge-slider", 3);
                     
                     <!-- Ikon Media Sosial -->
                     <ul class="social-icons mt-3">
-                      
+
                       <a href="#" style="--clr: #1877f2;">
                         <ion-icon name="logo-facebook"></ion-icon>
                       </a>
@@ -645,7 +644,6 @@ createSlider(".bridge-slider", 3);
                       <a href="#" style="--clr: #C13584;">
                         <ion-icon name="logo-instagram"></ion-icon>
                       </a>
-                      
                     </ul>
                   </div>
                 </div>
@@ -664,9 +662,7 @@ createSlider(".bridge-slider", 3);
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       
-      <script>
-    AOS.init();
-      </script>
+
       <script>
         document.querySelector('.copy-button').addEventListener('click', function() {
     const rekeningNumber = '17220378';
@@ -680,10 +676,8 @@ createSlider(".bridge-slider", 3);
     <script>
       // Array gambar background
       const backgrounds = [
-        "img/66c5918169280.png",
-        "img/dian.jpg",
-        "img/pian.jpg",
-        "img/pngtree-photography-of-flower-path-in-the-park-image_996526.jpg"
+        "img/hero2.jpeg",
+        "img/hero1.jpeg",
       ];
     
       // Index awal
@@ -737,18 +731,8 @@ createSlider(".bridge-slider", 3);
         onEnd: function() { alert('Acara Telah Dimulai!'); } // Aksi ketika countdown selesai
       });
     </script>
-    <script>
-      
-      const stickytop=document.querySelector('.sticky-top');
-      const offcanvas=document.querySelector('.offcanvas');
-      
-      offcanvas.addEventListener('show.bs.offcanvas',function(){
-        stickytop.style.overflow='visible';
-      });
-      offcanvas.addEventListener('hidden.bs.offcanvas',function(){
-        stickytop.style.overflow='hidden';
-      });
-    </script>
+    
+    
 
     <script>
       const rootelement=document.querySelector(":root");
@@ -756,7 +740,7 @@ createSlider(".bridge-slider", 3);
       const song=document.querySelector('#song');
       const audioicon=document.querySelector('.audio-icon-wrapper i')
       const nav = document.querySelector('.navbar_hp');
-      const btnhome = document.querySelector('.btn')
+      const btnhome = document.querySelector('.btn');
       let isPlaying=false;
       function disablescroll(){
         scrollTop = window.pageXOffset||document.documentElement.scrollTop;
@@ -844,7 +828,13 @@ createSlider(".bridge-slider", 3);
 
       paginatedComments.forEach(comment => {
           const createdAt = new Date(comment.createdAt).toLocaleString("id-ID", {
-              weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hourCycle: 'h23' 
           });
           
           const commentElement = document.createElement("div");
