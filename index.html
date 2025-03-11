@@ -289,24 +289,22 @@ items.forEach(item => {
     </section>
 
     <script>
-
-function createSlider(selector) {
+function createSlider(selector, delay = 5000) {
     let slider = document.querySelector(selector);
     let slides = Array.from(slider.children);
     let index = 0;
     let totalSlides = slides.length;
     let isAnimating = false;
 
-    // Tambah kloningan slide pertama biar looping smooth
     let firstClone = slides[0].cloneNode(true);
     slider.appendChild(firstClone);
 
     function nextSlide() {
-        if (isAnimating) return; // Hindari animasi dobel (bikin lag)
+        if (isAnimating) return;
         isAnimating = true;
 
         index++;
-        slider.style.transition = "transform 2s ease-out"; // Smooth transition
+        slider.style.transition = "transform 1s ease-out";
         slider.style.transform = `translateX(-${index * 100}%)`;
 
         setTimeout(() => {
@@ -316,18 +314,21 @@ function createSlider(selector) {
                 index = 0;
             }
             isAnimating = false;
-        }, 2000); // Sesuaikan waktu dengan animasi
+            requestAnimationFrame(loop); // Loop dengan animation frame
+        }, 1000);
     }
 
-    // Set interval unik untuk setiap slider
-    setInterval(nextSlide, selector === ".foto-info-slider" ? 7000 : 5000); 
+    function loop() {
+        setTimeout(nextSlide, delay);
+    }
+
+    requestAnimationFrame(loop); // Mulai loop saat halaman siap
 }
 
-// Panggil fungsi untuk masing-masing slider secara independen
 document.addEventListener("DOMContentLoaded", function () {
-    createSlider(".groom-slider");
-    createSlider(".bridge-slider");
-    createSlider(".foto-info-slider");
+    createSlider(".groom-slider", 5000);
+    createSlider(".bridge-slider", 5000);
+    createSlider(".foto-info-slider", 7000);
 });
 
       
