@@ -89,21 +89,6 @@ margin-top: 100px;
 
 
 
-
-
-
-@keyframes slideLoop3 {
-  0%, 25% { transform: translate3d(0, 0, 0); }
-  30%, 55% { transform: translate3d(-100%, 0, 0); }
-  60%, 85% { transform: translate3d(-200%, 0, 0); }
-  90%, 100% { transform: translate3d(-300%, 0, 0); }
-}
-
-
-
-
-
-
 .groom-section .right-content  {
   flex: 2; 
   position: relative;
@@ -120,7 +105,6 @@ margin-top: 100px;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  animation: slideLoop3 16s ease-in-out infinite;
 }
 
 .groom-section .slider img {
@@ -214,7 +198,6 @@ margin-top: 100px;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  animation: slideLoop3 16s ease-in-out infinite;
 }
 
 .bridge .slider img {
@@ -249,18 +232,6 @@ margin-top: 100px;
   font-size: 1.2rem;
   margin: 5px 0 0;
 }
-@keyframes slideLoop5 {
-  0%, 18% { transform: translate3d(0, 0, 0); }
-  20%, 38% { transform: translate3d(-100%, 0, 0); }
-  40%, 58% { transform: translate3d(-200%, 0, 0); }
-  60%, 78% { transform: translate3d(-300%, 0, 0); }
-  80%, 98% { transform: translate3d(-400%, 0, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-
-
-
 .foto-info-inti {
   display: flex;
   height: auto; 
@@ -286,7 +257,6 @@ margin-top: 100px;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  animation: slideLoop5 24s ease-in-out infinite;
 }
 .foto-info .slider img{
   flex: 1 0 100%;
@@ -1048,12 +1018,12 @@ footer a:hover {
     top: 31px;
   }
   .Seeyou img {
-    width: 250px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
  
   }
   .foto-info {
-    width: 350px;
+    width: 450px;
     height: 550px;
   }
   .groom-section .left-content {
