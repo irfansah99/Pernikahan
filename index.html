@@ -170,6 +170,7 @@ items.forEach(item => {
           <img src="img/pian1.webp" id="gambar1" alt="Gambar 1" > 
           <img src="img/pian2.webp" id="gambar2" alt="Gambar 2" > 
           <img src="img/pian3.webp" id="gambar3" alt="Gambar 3" > 
+          <img src="img/pian1.webp" id="gambar1" alt="Gambar 1" > 
 
         </div>
         <div class="overlay-text">
@@ -196,6 +197,7 @@ items.forEach(item => {
           <img src="img/dian1.webp" id="gambar1" alt="Gambar 1" > 
           <img src="img/dian2.webp" id="gambar2" alt="Gambar 2" > 
           <img src="img/dian3.webp" id="gambar3" alt="Gambar 3" > 
+          <img src="img/dian1.webp" id="gambar1" alt="Gambar 1" > 
    
         </div>
         <div class="overlay-text">
@@ -222,6 +224,7 @@ items.forEach(item => {
             <img src="img/dian&pian3.webp" id="gambar3" alt="Gambar 3" > 
             <img src="img/dian&pian4.webp" id="gambar4" alt="Gambar 4" > 
             <img src="img/dian&pian5.webp" id="gambar5" alt="Gambar 5" > 
+            <img src="img/dian&pian1.webp" id="gambar1" alt="Gambar 1" > 
      
            </div>
           </div>
@@ -287,52 +290,6 @@ items.forEach(item => {
         </div>
       </div>
     </section>
-
-    <script>
-
-function createSlider(selector) {
-    let slider = document.querySelector(selector);
-    let slides = Array.from(slider.children);
-    let index = 0;
-    let totalSlides = slides.length;
-    let isAnimating = false;
-
-    // Tambah kloningan slide pertama biar looping smooth
-    let firstClone = slides[0].cloneNode(true);
-    slider.appendChild(firstClone);
-
-    function nextSlide() {
-        if (isAnimating) return; // Hindari animasi dobel (bikin lag)
-        isAnimating = true;
-
-        index++;
-        slider.style.transition = "transform 2s ease-out"; // Smooth transition
-        slider.style.transform = `translateX(-${index * 100}%)`;
-
-        setTimeout(() => {
-            if (index === totalSlides) {
-                slider.style.transition = "none";
-                slider.style.transform = "translateX(0%)";
-                index = 0;
-            }
-            isAnimating = false;
-        }, 2000); // Sesuaikan waktu dengan animasi
-    }
-
-    // Set interval unik untuk setiap slider
-    setInterval(nextSlide, selector === ".foto-info-slider" ? 7000 : 5000); 
-}
-
-// Panggil fungsi untuk masing-masing slider secara independen
-document.addEventListener("DOMContentLoaded", function () {
-    createSlider(".groom-slider");
-    createSlider(".bridge-slider");
-    createSlider(".foto-info-slider");
-});
-
-
-      
-        </script>
 
     <section id="story" class="story overflow-hidden">
       <div class="container">
