@@ -289,50 +289,33 @@ items.forEach(item => {
     </section>
 
     <script>
-function createSlider(selector, delay) {
-    let slider = document.querySelector(selector);
-    if (!slider) return; // Hindari error jika selector tidak ditemukan
 
-    let slides = Array.from(slider.children);
-    let index = 0;
-    let totalSlides = slides.length;
-    let slideWidth = slides[0].clientWidth;
-
-    let firstClone = slides[0].cloneNode(true);
-    slider.appendChild(firstClone);
-
-    function updateSlideWidth() {
-        slideWidth = slides[0].clientWidth;
-    }
-
-    function nextSlide() {
-        index++;
-        slider.style.transition = "transform 1s ease-in-out";
-        slider.style.transform = `translateX(-${index * slideWidth}px)`;
-
-        slider.addEventListener("transitionend", function resetLoop() {
-            if (index === totalSlides) {
-                slider.style.transition = "none";
-                slider.style.transform = "translateX(0px)";
-                index = 0;
-            }
-            slider.removeEventListener("transitionend", resetLoop);
-        });
-    }
-
-    // Gunakan interval berbeda untuk setiap slider
-    setTimeout(() => {
-        setInterval(nextSlide, 4000 + delay);
-    }, delay);
-
-    window.addEventListener("resize", updateSlideWidth);
-}
-
-// Terapkan delay berbeda untuk tiap slider agar tidak serentak
-createSlider(".groom-slider", 0);
-createSlider(".bridge-slider", 1500); // Slider ini mulai lebih lambat 1.5 detik
-createSlider(".foto-info-slider", 3000); // Slider ini mulai lebih lambat 3 detik
-
+      function createSlider(selector, totalSlides) {
+          let slider = document.querySelector(selector);
+          let index = 0;
+      
+          function nextSlide() {
+              index++;
+              slider.style.transition = "transform 3s ease-in-out";
+              slider.style.transform = `translateX(-${index * 100}%)`;
+      
+             
+              if (index === totalSlides) {
+                  setTimeout(() => {
+                      slider.style.transition = "none"; 
+                      slider.style.transform = "translateX(0%)";
+                      index = 0; 
+                  }, 5000); 
+              }
+          }
+      
+          setInterval(nextSlide, 7000);
+      }
+      
+      
+      createSlider(".groom-slider", 3); 
+      createSlider(".bridge-slider", 3); 
+      createSlider(".foto-info-slider", 5);
       
         </script>
 
@@ -938,17 +921,16 @@ createSlider(".foto-info-slider", 3000); // Slider ini mulai lebih lambat 3 deti
   } else {
     console.warn("Elemen '#nama' tidak ditemukan.");
   }
-
   document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
 
     sections.forEach(section => {
-        let sectionId = section.id || section.className; // Gunakan ID atau class sebagai kunci unik
+        let sectionId = section.id || section.className; // Ambil ID atau class unik section
 
-        if (sessionStorage.getItem(sectionId)) {
-            section.style.display = "none"; // Sembunyikan jika sudah pernah diload
+        if (!sessionStorage.getItem(sectionId)) {
+            sessionStorage.setItem(sectionId, "loaded"); // Tandai section sudah diload
         } else {
-            sessionStorage.setItem(sectionId, "true"); // Tandai section sudah diload
+            section.style.display = "none"; // Sembunyikan jika sudah ada di sessionStorage
         }
     });
 });
