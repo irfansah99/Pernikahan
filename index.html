@@ -922,16 +922,7 @@ items.forEach(item => {
     console.warn("Elemen '#nama' tidak ditemukan.");
   }
   
-  document.addEventListener("DOMContentLoaded", function () {
-    let sectionKey = "sectionLoaded"; // Kunci penyimpanan di sessionStorage
 
-    // Cek apakah section sudah pernah diload
-    if (!sessionStorage.getItem(sectionKey)) {
-        sessionStorage.setItem(sectionKey, "true"); // Simpan status di sessionStorage
-    } else {
-        document.body.innerHTML = ""; // Kosongkan halaman jika sudah diload sebelumnya
-    }
-});
 
 </script>
 
