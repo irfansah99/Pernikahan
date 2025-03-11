@@ -290,48 +290,31 @@ items.forEach(item => {
 
     <script>
 
-function createSlider(selector) {
-    let slider = document.querySelector(selector);
-    let slides = Array.from(slider.children);
-    let index = 0;
-    let totalSlides = slides.length;
-
-    // Duplikasi elemen pertama di akhir untuk efek infinite loop
-    let firstClone = slides[0].cloneNode(true);
-    slider.appendChild(firstClone);
-
-    function updateSlideWidth() {
-        return slides[0].clientWidth; // Pastikan mendapatkan ukuran terbaru
-    }
-
-    function nextSlide() {
-        let slideWidth = updateSlideWidth();
-        index++;
-        slider.style.transition = "transform 4s ease-in-out";
-        slider.style.transform = `translateX(-${index * slideWidth}px)`;
-
-        // Reset posisi setelah transisi selesai (loop)
-        slider.addEventListener("transitionend", function resetLoop() {
-            if (index === totalSlides) {
-                slider.style.transition = "none";
-                slider.style.transform = "translateX(0px)";
-                index = 0;
-            }
-            slider.removeEventListener("transitionend", resetLoop);
-        });
-    }
-
-    setInterval(nextSlide, 5000); // Ganti slide tiap 4 detik
-
-    // Update ukuran saat window di-resize
-    window.addEventListener("resize", updateSlideWidth);
-}
-
-
-// Terapkan ke semua slider
-createSlider(".groom-slider", 3);
-createSlider(".bridge-slider", 3);
-
+      function createSlider(selector, totalSlides) {
+          let slider = document.querySelector(selector);
+          let index = 0;
+      
+          function nextSlide() {
+              index++;
+              slider.style.transition = "transform 5s ease-in-out";
+              slider.style.transform = `translateX(-${index * 100}%)`;
+      
+             
+              if (index === totalSlides) {
+                  setTimeout(() => {
+                      slider.style.transition = "none"; 
+                      slider.style.transform = "translateX(0%)";
+                      index = 0; 
+                  }, 5000); 
+              }
+          }
+      
+          setInterval(nextSlide, 7000);
+      }
+      
+      
+      createSlider(".groom-slider", 3); 
+      createSlider(".bridge-slider", 3); 
 
       
         </script>
