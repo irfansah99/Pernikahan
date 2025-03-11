@@ -921,18 +921,16 @@ items.forEach(item => {
   } else {
     console.warn("Elemen '#nama' tidak ditemukan.");
   }
+  
   document.addEventListener("DOMContentLoaded", function () {
-    let sections = document.querySelectorAll("section");
+    let sectionKey = "sectionLoaded"; // Kunci penyimpanan di sessionStorage
 
-    sections.forEach(section => {
-        let sectionId = section.id || section.className; // Ambil ID atau class unik section
-
-        if (!sessionStorage.getItem(sectionId)) {
-            sessionStorage.setItem(sectionId, "loaded"); // Tandai section sudah diload
-        } else {
-            section.style.display = "none"; // Sembunyikan jika sudah ada di sessionStorage
-        }
-    });
+    // Cek apakah section sudah pernah diload
+    if (!sessionStorage.getItem(sectionKey)) {
+        sessionStorage.setItem(sectionKey, "true"); // Simpan status di sessionStorage
+    } else {
+        document.body.innerHTML = ""; // Kosongkan halaman jika sudah diload sebelumnya
+    }
 });
 
 </script>
