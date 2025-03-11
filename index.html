@@ -182,7 +182,7 @@ items.forEach(item => {
     <section class="and">
       <div class="container">
     
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="700" data-aos-easing="ease-in-out">
+        <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <h1>&</h1>
           </div>
@@ -227,18 +227,18 @@ items.forEach(item => {
           </div>
         </div>
           <div class="col-md-8 col-10 text-center">
-            <h2 class="h2"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">Informasi Acara</h2>
-            <p class="alamat"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">Alamat: Gedung biru putih, Rusunawa semper barat. <br>
+            <h2 class="h2">Informasi Acara</h2>
+            <p class="alamat">Alamat: Gedung biru putih, Rusunawa semper barat. <br>
               Jl. Belibis V, RT.19/RW.4. Kec. Cilincing, Jkt Utara</p>
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3966.9677788343!2d106.9256587!3d-6.1350317!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e
               698b2ad8a3d55f%3A0x734fce0db6b99fc4!2sRUSUN%20SEMPER%20BARAT!5e0!3m2!1sid!2sid!4v1738313764865!5m2!1sid!2sid" width="100%" height="250" style="border:0;" 
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              <a href="https://maps.app.goo.gl/jiVYVKZQPWRgPeEp8" target="_blank" class="btn btn-light btn-sm my-3"data-aos="zoom-out" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">Klik untuk Membuka Peta</a>
-              <p class="description"data-aos="zoom-out" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias perferendis consequatur omnis suscipit, quia, quod placeat facere architecto est ipsa odit delectus. Possimus quod ratione alias nemo tempore dolorum repellat.</p>
+              <a href="https://maps.app.goo.gl/jiVYVKZQPWRgPeEp8" target="_blank" class="btn btn-light btn-sm my-3">Klik untuk Membuka Peta</a>
+              <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias perferendis consequatur omnis suscipit, quia, quod placeat facere architecto est ipsa odit delectus. Possimus quod ratione alias nemo tempore dolorum repellat.</p>
           </div>
         </div>
         <div class="row justify-content-center mt-4">
-          <div class="col-md-5 col-10 "data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col-md-5 col-10 "data-aos="fade-right" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <div class="card text-center text-bg-light mb-5">
               <div class="card-header">
                 Akad Nikah
@@ -261,7 +261,7 @@ items.forEach(item => {
               </div>
             </div>
           </div>
-          <div class="col-md-5 col-10"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col-md-5 col-10"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <div class="card text-center text-bg-light">
               <div class="card-header">
                 Resepsi
@@ -290,33 +290,43 @@ items.forEach(item => {
 
     <script>
 
-function createSlider(selector, totalSlides) {
+function createSlider(selector) {
     let slider = document.querySelector(selector);
-    let slides = slider.children;
+    let slides = Array.from(slider.children);
     let index = 0;
-    let slideWidth = slides[0].clientWidth; 
+    let totalSlides = slides.length;
 
     // Duplikasi elemen pertama di akhir untuk efek infinite loop
     let firstClone = slides[0].cloneNode(true);
     slider.appendChild(firstClone);
 
-    function nextSlide() {
-        index++;
-        slider.style.transition = "transform 8s ease-in-out";
-        slider.style.transform = `translate3d(-${index * slideWidth}px, 0, 0)`;
-
-        // Reset tanpa animasi jika mencapai akhir
-        if (index === totalSlides) {
-            setTimeout(() => {
-                slider.style.transition = "none"; 
-                slider.style.transform = "translate3d(0px, 0, 0)";
-                index = 0;
-            }, 8000);
-        }
+    function updateSlideWidth() {
+        return slides[0].clientWidth; // Pastikan mendapatkan ukuran terbaru
     }
 
-    setInterval(nextSlide, 10000); // Ganti slide tiap 4 detik
+    function nextSlide() {
+        let slideWidth = updateSlideWidth();
+        index++;
+        slider.style.transition = "transform 4s ease-in-out";
+        slider.style.transform = `translateX(-${index * slideWidth}px)`;
+
+        // Reset posisi setelah transisi selesai (loop)
+        slider.addEventListener("transitionend", function resetLoop() {
+            if (index === totalSlides) {
+                slider.style.transition = "none";
+                slider.style.transform = "translateX(0px)";
+                index = 0;
+            }
+            slider.removeEventListener("transitionend", resetLoop);
+        });
+    }
+
+    setInterval(nextSlide, 5000); // Ganti slide tiap 4 detik
+
+    // Update ukuran saat window di-resize
+    window.addEventListener("resize", updateSlideWidth);
 }
+
 
 // Terapkan ke semua slider
 createSlider(".groom-slider", 3);
@@ -329,7 +339,7 @@ createSlider(".foto-info-slider", 5);
     <section id="story" class="story overflow-hidden">
       <div class="container">
         <!-- Judul dan deskripsi bagian -->
-        <div class="row justify-content-center"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+        <div class="row justify-content-center"data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
           <div class="col-md-8 col-10 text-center">
             <span>Bagaimana Kami Saling Mencintai</span>
             <h2>Cerita Kami</h2>
@@ -339,7 +349,7 @@ createSlider(".foto-info-slider", 5);
         <!-- Bagian timeline -->
         <div class="row">
           <div class="col">
-            <ul class="timeline"data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+            <ul class="timeline"data-aos="fade-right" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
               <li>
                 <div class="timeline-image"style="background-image: url(img/dian.jpg);" ></div>
                 <div class="timeline-panel">
@@ -355,7 +365,7 @@ createSlider(".foto-info-slider", 5);
                   </div>
                 </div>
               </li>
-              <li class="timeline-invert"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+              <li class="timeline-invert"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="timeline-image"style="background-image: url(img/pian.jpg);" ></div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
@@ -370,7 +380,7 @@ createSlider(".foto-info-slider", 5);
                   </div>
                 </div>
               </li>
-              <ul class="timeline"data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+              <ul class="timeline"data-aos="fade-right" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <li>
                   <div class="timeline-image"style="background-image: url(img/dian&pian.jpeg);" ></div>
                   <div class="timeline-panel">
@@ -386,7 +396,7 @@ createSlider(".foto-info-slider", 5);
                   </div>
                 </li>
 
-            <li class="timeline-invert"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+            <li class="timeline-invert"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
               <div class="timeline-image"style="background-image: url(img/dian&pian.jpeg);" ></div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
@@ -409,7 +419,7 @@ createSlider(".foto-info-slider", 5);
     <section id="gallery" class="gallery py-5 overflow-hidden">
       <div class="container">
         <!-- Bagian Header -->
-        <div class="row justify-content-center"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+        <div class="row justify-content-center"data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
           <div class="col-md-8 col-10 text-center mb-4">
             <span class="d-block text-uppercase text-muted">Memori Kisah Kami</span>
             <h2 class="fw-bold">Galeri Foto</h2>
@@ -418,32 +428,32 @@ createSlider(".foto-info-slider", 5);
     
         <!-- Bagian Galeri -->
         <div class="row  row-cols-md-4 row-cols-sm-2 row-cols-2 g-4 justify-content-center ">
-          <div class="col"data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col"data-aos="fade-right" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <a href="img/hero1.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 1" data-gallery="example-gallery">
               <img src="img/hero1.jpeg" alt="Dian Pratiwi SOS 1" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
-          <div class="col"data-aos="fade-right" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col"data-aos="fade-right" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <a href="img/hero2.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 2" data-gallery="example-gallery">
               <img src="img/hero2.jpeg" alt="Dian Pratiwi SOS 2" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
-          <div class="col"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <a href="img/dian&pian6.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 3" data-gallery="example-gallery">
               <img src="img/dian&pian6.jpeg" alt="Dian Pratiwi SOS 3" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
-          <div class="col"data-aos="fade-left" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <a href="img/dian&pian7.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 4" data-gallery="example-gallery">
               <img src="img/dian&pian7.jpeg" alt="Dian Pratiwi SOS 4" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
-          <div class="col"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col"data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <a href="img/dian&pian8.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 5" data-gallery="example-gallery">
               <img src="img/dian&pian8.jpeg" alt="Dian Pratiwi SOS 5" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
-          <div class="col"data-aos="fade-up" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+          <div class="col"data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <a href="img/dian&pian5.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 6" data-gallery="example-gallery">
               <img src="img/dian&pian5.jpeg" alt="Dian Pratiwi SOS 6" class="img-fluid w-100 rounded shadow">
             </a>
@@ -456,7 +466,7 @@ createSlider(".foto-info-slider", 5);
         <div class="container">
           <!-- Bagian Header -->
           <div class="row justify-content-center">
-            <div class="col-md-8 col-10 text-center mb-4"data-aos="zoom-in" data-aos-delay="600" data-aos-duration="700"data-aos-easing="ease-in-out">
+            <div class="col-md-8 col-10 text-center mb-4"data-aos="zoom-in" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
               <h2>Konfirmasi Kehadiran</h2>
               <p>
                 Silahkan isi form dibawah ini untuk Konfirmasi kehadiran
@@ -469,7 +479,7 @@ createSlider(".foto-info-slider", 5);
           id="my-form">
             <div class="row g-3 align-items-center justify-content-center">
               <!-- Kolom Nama -->
-              <div class="col-md-3 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="700"data-aos-easing="ease-in-out">
+              <div class="col-md-3 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="mb-3">
                   <label for="nama" class="form-label">Nama</label>
                   <input type="text" class="form-control" id="nama" name="nama">
@@ -477,7 +487,7 @@ createSlider(".foto-info-slider", 5);
               </div>
       
               <!-- Kolom Jumlah -->
-              <div class="col-md-1 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="700"data-aos-easing="ease-in-out">
+              <div class="col-md-1 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="mb-3">
                   <label for="jumlah" class="form-label">Jumlah</label>
                   <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" value="1">
@@ -485,7 +495,7 @@ createSlider(".foto-info-slider", 5);
               </div>
       
               <!-- Kolom Status -->
-              <div class="col-md-2 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="700"data-aos-easing="ease-in-out">
+              <div class="col-md-2 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="mb-3">
                   <label for="status" class="form-label">Status</label>
                   <select name="status" id="status" class="form-select">
@@ -497,7 +507,7 @@ createSlider(".foto-info-slider", 5);
               </div>
       
               <!-- Tombol Kirim -->
-              <div class="col-md-1 col-12" style="margin-top:50px;"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="700"data-aos-easing="ease-in-out">
+              <div class="col-md-1 col-12" style="margin-top:50px;"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="mb-3">
                   <button type="submit" class="btn btn-primary w-100">Kirim</button>
                 </div>
@@ -537,13 +547,13 @@ createSlider(".foto-info-slider", 5);
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center mb-4">
-                    <span data-aos="zoom-in" data-aos-delay="600" data-aos-duration="700" data-aos-easing="ease-in-out">
+                    <span data-aos="zoom-in" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out">
                         Ungkapan Tanda Kasih
                     </span>
-                    <h2 data-aos="fade-right" data-aos-delay="600" data-aos-duration="700" data-aos-easing="ease-in-out">
+                    <h2 data-aos="fade-right" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out">
                         Kirim Hadiah
                     </h2>
-                    <p data-aos="fade-left" data-aos-delay="600" data-aos-duration="700" data-aos-easing="ease-in-out">
+                    <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic fuga ut aut, sapiente culpa quos.
                     </p>
                 </div>
@@ -613,7 +623,7 @@ createSlider(".foto-info-slider", 5);
             <section class="Seeyou">
               <div class="container">
                 <!-- Judul dan deskripsi bagian -->
-                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="700" data-aos-easing="ease-in-out">
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out">
                   <div class="col-md-8 col-10 text-center">
                     <span>
                       <img src="img/seeyou.jpeg" alt="Foto Pian & Dian">
