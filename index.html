@@ -306,7 +306,7 @@ function createSlider(selector) {
         isAnimating = true;
 
         index++;
-        slider.style.transition = "transform 2s ease-out"; // Kurangi durasi agar lebih smooth
+        slider.style.transition = "transform 2s ease-out"; // Smooth transition
         slider.style.transform = `translateX(-${index * 100}%)`;
 
         setTimeout(() => {
@@ -316,17 +316,14 @@ function createSlider(selector) {
                 index = 0;
             }
             isAnimating = false;
-        }, 6000); // Tunggu animasi selesai sebelum reset
+        }, 2000); // Sesuaikan waktu dengan animasi
     }
 
-    function loop() {
-        nextSlide();
-        setTimeout(() => requestAnimationFrame(loop), 5000); // Pakai requestAnimationFrame
-    }
-
-    requestAnimationFrame(loop);
+    // Set interval unik untuk setiap slider
+    setInterval(nextSlide, selector === ".foto-info-slider" ? 7000 : 5000); 
 }
 
+// Panggil fungsi untuk masing-masing slider secara independen
 document.addEventListener("DOMContentLoaded", function () {
     createSlider(".groom-slider");
     createSlider(".bridge-slider");
