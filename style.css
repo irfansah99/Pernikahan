@@ -937,6 +937,7 @@ footer a:hover {
 }
 /* tab */
 
+
 @media(max-width:768px){
   html{
     font-size: 65%;
@@ -1006,8 +1007,9 @@ footer a:hover {
     top: 31px;
   }
   .Seeyou img {
-    width: 350px;
+    width: 300px;
     height: 400px;
+ 
   }
   .foto-info {
     width: 450px;
