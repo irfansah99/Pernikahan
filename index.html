@@ -170,7 +170,7 @@ items.forEach(item => {
           <img src="img/pian1.webp" id="gambar1" alt="Gambar 1" > 
           <img src="img/pian2.webp" id="gambar2" alt="Gambar 2" > 
           <img src="img/pian3.webp" id="gambar3" alt="Gambar 3" > 
-          <img src="img/pian1.webp" id="gambar4" alt="Kloning Gambar 1" >
+
         </div>
         <div class="overlay-text">
           <h2>R. Alfian, S.Kom.</h2>
@@ -196,7 +196,7 @@ items.forEach(item => {
           <img src="img/dian1.webp" id="gambar1" alt="Gambar 1" > 
           <img src="img/dian2.webp" id="gambar2" alt="Gambar 2" > 
           <img src="img/dian3.webp" id="gambar3" alt="Gambar 3" > 
-          <img src="img/dian1.webp" id="gambar4" alt="Kloning Gambar 1" >
+   
         </div>
         <div class="overlay-text">
           <h2>Dian Pratiwi, S.Sos.</h2>
@@ -222,7 +222,7 @@ items.forEach(item => {
             <img src="img/dian&pian3.webp" id="gambar3" alt="Gambar 3" > 
             <img src="img/dian&pian4.webp" id="gambar4" alt="Gambar 4" > 
             <img src="img/dian&pian5.webp" id="gambar5" alt="Gambar 5" > 
-            <img src="img/dian&pian1.webp" id="gambar4" alt="Gambar 1" >
+     
            </div>
           </div>
         </div>
@@ -306,7 +306,7 @@ function createSlider(selector) {
         isAnimating = true;
 
         index++;
-        slider.style.transition = "transform 0.6s ease-out"; // Kurangi durasi agar lebih smooth
+        slider.style.transition = "transform 2s ease-out"; // Kurangi durasi agar lebih smooth
         slider.style.transform = `translateX(-${index * 100}%)`;
 
         setTimeout(() => {
@@ -316,7 +316,7 @@ function createSlider(selector) {
                 index = 0;
             }
             isAnimating = false;
-        }, 600); // Tunggu animasi selesai sebelum reset
+        }, 6000); // Tunggu animasi selesai sebelum reset
     }
 
     function loop() {
