@@ -290,32 +290,27 @@ items.forEach(item => {
 
     <script>
 
-      function createSlider(selector, totalSlides) {
-          let slider = document.querySelector(selector);
-          let index = 0;
-      
-          function nextSlide() {
-              index++;
-              slider.style.transition = "transform 3s ease-in-out";
-              slider.style.transform = `translateX(-${index * 100}%)`;
-      
-             
-              if (index === totalSlides) {
-                  setTimeout(() => {
-                      slider.style.transition = "none"; 
-                      slider.style.transform = "translateX(0%)";
-                      index = 0; 
-                  }, 5000); 
-              }
-          }
-      
-          setInterval(nextSlide, 7000);
-      }
-      
-      
-      createSlider(".groom-slider", 3); 
-      createSlider(".bridge-slider", 3); 
-      createSlider(".foto-info-slider", 5);
+function createSlider(selector) {
+    let slider = document.querySelector(selector);
+    let slides = Array.from(slider.children);
+    let index = 0;
+    let totalSlides = slides.length;
+
+    function nextSlide() {
+        index = (index + 1) % totalSlides; // Loop otomatis
+        slider.style.transition = "transform 0.6s ease-in-out";
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    setInterval(nextSlide, 4000); // Ganti slide setiap 4 detik
+}
+
+// Terapkan ke semua slider
+document.addEventListener("DOMContentLoaded", function () {
+    createSlider(".groom-slider");
+    createSlider(".bridge-slider");
+});
+
       
         </script>
 
@@ -921,7 +916,7 @@ items.forEach(item => {
   } else {
     console.warn("Elemen '#nama' tidak ditemukan.");
   }
-  
+
   document.addEventListener("DOMContentLoaded", function () {
     let sectionKey = "sectionLoaded"; // Kunci penyimpanan di sessionStorage
 
