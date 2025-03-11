@@ -1,5 +1,9 @@
 const CACHE_NAME = "slider-cache-v2"; // Ganti versi kalau update cache
 const urlsToCache = [
+    "/", // Halaman utama
+  "/index.html",
+  "/styles.css", // Sesuaikan dengan file CSS kamu
+  "/script.js",  // Sesuaikan dengan file JS kamu
   "/img/pian1.webp",
   "/img/pian2.webp",
   "/img/pian3.webp",
