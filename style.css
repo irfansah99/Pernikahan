@@ -721,15 +721,18 @@ display: table;
   background: #444;
   padding: 50px 0; 
   text-align: center;
+  
 }
 
 .Seeyou img {
   width: 700px; 
-  height: 700px;
+  height: 900px;
   border-radius: 15px; 
   object-fit: cover; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   background-color: #f0f0f0; 
+  
+  
 }
 
 
@@ -936,7 +939,6 @@ footer a:hover {
   }
 }
 /* tab */
-
 
 @media(max-width:768px){
   html{
