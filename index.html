@@ -302,7 +302,7 @@ function createSlider(selector, totalSlides) {
 
     function nextSlide() {
         index++;
-        slider.style.transition = "transform 4s ease-in-out";
+        slider.style.transition = "transform 8s ease-in-out";
         slider.style.transform = `translate3d(-${index * slideWidth}px, 0, 0)`;
 
         // Reset tanpa animasi jika mencapai akhir
@@ -311,11 +311,11 @@ function createSlider(selector, totalSlides) {
                 slider.style.transition = "none"; 
                 slider.style.transform = "translate3d(0px, 0, 0)";
                 index = 0;
-            }, 4000);
+            }, 8000);
         }
     }
 
-    setInterval(nextSlide, 4000); // Ganti slide tiap 4 detik
+    setInterval(nextSlide, 10000); // Ganti slide tiap 4 detik
 }
 
 // Terapkan ke semua slider
