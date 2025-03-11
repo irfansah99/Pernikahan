@@ -3,7 +3,6 @@ const urlsToCache = [
   "/img/pian1.webp",
   "/img/pian2.webp",
   "/img/pian3.webp",
-  "/img/pian4.webp",  // Tambah gambar baru jika perlu
   "/img/dian1.webp",
   "/img/dian2.webp",
   "/img/dian3.webp"
