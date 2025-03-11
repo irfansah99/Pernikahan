@@ -13,8 +13,8 @@ body {
   min-height: 4000px;
 }
 .home {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1)), url('img/dian&pian.jpeg');
-  min-height: 70vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1)), url('img/our.jpeg');
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -29,22 +29,22 @@ body {
 .home h4,
 .home h2,
 .home p {
-  color: var(--bg); /* Warna teks putih untuk kontras dengan latar belakang */
-  margin: 0; /* Menghilangkan margin untuk membuat posisi lebih rapih */
+  color: var(--bg); 
+  margin: 0; 
 }
 
 .home h4 {
-  font-size: 1.5rem; /* Ukuran font h4 */
+  font-size: 1.5rem; 
 }
 
 .home h2 {
-  font-size: 2.5rem; /* Ukuran font h2 */
+  font-size: 2.5rem; 
   font-family: "sacramento", cursive;
 }
 
 .home p {
-  font-size: 1.2rem; /* Ukuran font p */
-  margin-bottom: 10px; /* Memberi jarak antara p dan h2 */
+  font-size: 1.2rem; 
+  margin-bottom: 10px; 
 }
 
 
@@ -63,7 +63,6 @@ body {
   height: 100vh; 
 }
 
-/* Bagian kiri */
 .groom-section .left-content {
   flex: 1;
   background-color: white;
@@ -74,6 +73,7 @@ margin-top: 100px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
+
 }
 
 .groom-section .left-content h1 {
@@ -81,6 +81,7 @@ margin-top: 100px;
   transform: rotate(180deg); 
   margin-bottom: 25px;
   font-size: 4rem;
+  
 }
 .groom-section .left-content h2 {
   font-size: 3rem;
@@ -122,6 +123,7 @@ margin-top: 100px;
   padding: 15px 20px;
   border-radius: 10px;
   text-align: center;
+  font-weight: bold;
 }
 
 .groom-section .overlay-text h2 {
@@ -144,7 +146,7 @@ margin-top: 100px;
 }
 
 .and h1 {
-  font-size: 10rem; /* Ukuran font yang sesuai */
+  font-size: 10rem; 
   color: white;
   font-family: "sacramento", cursive;
 }
@@ -153,7 +155,7 @@ margin-top: 100px;
   height: 100vh; 
 }
 
-/* Bagian kiri */
+
 .bridge .right-content {
   flex: 1;
   background-color: white;
@@ -183,6 +185,7 @@ margin-top: 100px;
   align-items: center; 
   justify-content: center; 
   overflow: hidden; 
+
 }
 
 .bridge .slider {
@@ -223,7 +226,34 @@ margin-top: 100px;
   font-size: 1.2rem;
   margin: 5px 0 0;
 }
+.foto-info-inti {
+  display: flex;
+  height: auto; 
+  justify-content: center;
+  align-items: center;
+  margin:20px;
+  
+}
+.foto-info{
+  width: 40vw; 
+  height: 100vh;
+  position: relative;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  border-radius: 10px;
+}
+.foto-info .slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.foto-info .slider img{
+  flex: 1 0 100%;
+  object-fit: cover; 
 
+}
 
 
 
@@ -231,6 +261,7 @@ margin-top: 100px;
   min-height: 100vh;
   position: relative;
   overflow: hidden; 
+  
 }
 .hero::before {
   content: '';
@@ -239,13 +270,12 @@ margin-top: 100px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: var(--bg-image, url('img/66c5918169280.png'));
+  background-image: var(--bg-image, url('img/hero1.jpeg'));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: grayscale();
   z-index: -1;
-  transition: background-image 1s ease; /* Transisi pergantian */
+  transition: background-image 1s ease; 
 }
 
 
@@ -261,6 +291,8 @@ margin-top: 100px;
 .hero h3{
   font-family: "Bona Nova SC", serif;
   text-transform: uppercase;
+  margin-top: 10rem;
+  
 }
 .hero h4 {
   font-size: 1.6rem;
@@ -302,7 +334,7 @@ margin-top: 100px;
 .info{
   background-color: var(--bg);
   color: white;
-  padding-top: 10rem;
+  padding-top: 10px;
   padding-bottom: 10rem;
 }
 
@@ -343,13 +375,15 @@ margin-top: 100px;
   font-size: 0.9rem;
   font-weight: 300;
 }
-.story,
 .gallery,
 .gifts,
 .rspv,
 .arrum{
   padding-top: 10rem;
   padding-bottom: 8rem;
+}
+.story{
+  padding-top: 8rem;
 }
 .story span,
 .gallery span,
@@ -460,14 +494,13 @@ display: table;
   background-color: #f5f5f5;
 }
 
-.gallery .col video {
-  height: auto; /* Menjaga rasio aspek video */
-  max-height: 100%; /* Mengatur tinggi video agar tidak melebihi ukuran gambar */
-  object-fit: cover; /* Menyesuaikan video agar menutupi area dengan rasio yang sesuai */
-}
-/* Gambar Galeri */
+
+
 .gallery .img-fluid {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+  height: 400px;
+  width: 500px;
 }
 
 .gallery .img-fluid:hover {
@@ -571,7 +604,7 @@ display: table;
 .copy-button:hover {
   background-color: #0056b3;
 }
-/* Gaya untuk bagian gifts */
+
 .gifts {
   padding: 4rem 0;
   background-color: #f8f9fa;
@@ -625,9 +658,9 @@ display: table;
   text-align: center;
   padding: 15px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #007bff, white); /* Gradasi biru ke cyan */
+  background: linear-gradient(135deg, #007bff, white); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: white; /* Agar teks lebih kontras */
+  color: white; 
 }
 
 #gifts #modalBank img {
@@ -691,30 +724,22 @@ display: table;
 }
 
 .Seeyou img {
-  width: 600px; 
-  height: 600px;
+  width: 700px; 
+  height: 700px;
   border-radius: 15px; 
-  object-fit: contain; /* Menjaga gambar agar tidak terpotong */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-  background-color: #f0f0f0; /* Tambahkan warna latar belakang jika perlu */
-  border-style: outset;
-  border-color: #007bff;
-  border-width: 10px;
+  object-fit: cover; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  background-color: #f0f0f0; 
 }
 
 
-.Seeyou p {
-  font-size: 1rem;
-  color: white;
-  line-height: 1.6;
-  margin: 20px 0;
-  padding: 0 20px;
-}
+
 
 .Seeyou h3 {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
+  margin: 10px;
 }
 
 
@@ -726,6 +751,8 @@ footer {
   background-color: var(--pink);
   color: white;
   text-align: center;
+  
+  
 }
 
 footer a {
@@ -739,8 +766,6 @@ footer a:hover {
 }
 
 
-
-/* Gaya untuk ikon media sosial */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -748,7 +773,7 @@ footer a:hover {
   gap: 1.25rem;
   padding: 0;
   list-style: none;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 
@@ -927,7 +952,11 @@ footer a:hover {
   }
   .Seeyou img {
     width: 400px;
-    height: 400px;
+    height: 500px;
+  }
+  .foto-info {
+    width: 600px;
+    height: 700px;
   }
   .sticky-top{
     overflow: hidden;
@@ -962,8 +991,8 @@ footer a:hover {
     margin: 3px;
   }
   .timeline li .timeline-image {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
   .timeline li.timeline-panel{
     width: 65%;
@@ -971,13 +1000,18 @@ footer a:hover {
   }
   .timeline li .timeline-panel::before{
     top: 30px;
+    
   }
   .timeline li .timeline-panel::after{
     top: 31px;
   }
   .Seeyou img {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 400px;
+  }
+  .foto-info {
+    width: 450px;
+    height: 550px;
   }
   .groom-section .left-content {
     flex: 0.5;  
