@@ -93,13 +93,10 @@ margin-top: 100px;
 
 
 @keyframes slideLoop3 {
-  0%, 25% { transform: translateX(0); } /* Gambar 1 */
-  30%, 55% { transform: translateX(-100%); } /* Gambar 2 */
-  60%, 85% { transform: translateX(-200%); } /* Gambar 3 */
-  90%, 100% { transform: translateX(-300%); } /* Kloning Gambar 1 */
-
-  /* Trik agar transisi looping mulus */
-  100.01% { transform: translateX(0); }
+  0%, 25% { transform: translate3d(0, 0, 0); }
+  30%, 55% { transform: translate3d(-100%, 0, 0); }
+  60%, 85% { transform: translate3d(-200%, 0, 0); }
+  90%, 100% { transform: translate3d(-300%, 0, 0); }
 }
 
 
@@ -253,16 +250,15 @@ margin-top: 100px;
   margin: 5px 0 0;
 }
 @keyframes slideLoop5 {
-  0%, 18% { transform: translateX(0); } /* Gambar 1 */
-  20%, 38% { transform: translateX(-100%); } /* Gambar 2 */
-  40%, 58% { transform: translateX(-200%); } /* Gambar 3 */
-  60%, 78% { transform: translateX(-300%); } /* Gambar 4 */
-  80%, 98% { transform: translateX(-400%); } /* Gambar 5 */
-  100% { transform: translateX(-500%); } /* Kloning Gambar 1 */
-
-  /* Trik agar transisi looping mulus */
-  100.01% { transform: translateX(0); }
+  0%, 18% { transform: translate3d(0, 0, 0); }
+  20%, 38% { transform: translate3d(-100%, 0, 0); }
+  40%, 58% { transform: translate3d(-200%, 0, 0); }
+  60%, 78% { transform: translate3d(-300%, 0, 0); }
+  80%, 98% { transform: translate3d(-400%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
+
+
 
 
 .foto-info-inti {
