@@ -289,22 +289,24 @@ items.forEach(item => {
     </section>
 
     <script>
-function createSlider(selector, delay = 5000) {
+
+function createSlider(selector) {
     let slider = document.querySelector(selector);
     let slides = Array.from(slider.children);
     let index = 0;
     let totalSlides = slides.length;
     let isAnimating = false;
 
+    // Tambah kloningan slide pertama biar looping smooth
     let firstClone = slides[0].cloneNode(true);
     slider.appendChild(firstClone);
 
     function nextSlide() {
-        if (isAnimating) return;
+        if (isAnimating) return; // Hindari animasi dobel (bikin lag)
         isAnimating = true;
 
         index++;
-        slider.style.transition = "transform 1s ease-out";
+        slider.style.transition = "transform 2s ease-out"; // Smooth transition
         slider.style.transform = `translateX(-${index * 100}%)`;
 
         setTimeout(() => {
@@ -314,21 +316,18 @@ function createSlider(selector, delay = 5000) {
                 index = 0;
             }
             isAnimating = false;
-            requestAnimationFrame(loop); // Loop dengan animation frame
-        }, 1000);
+        }, 2000); // Sesuaikan waktu dengan animasi
     }
 
-    function loop() {
-        setTimeout(nextSlide, delay);
-    }
-
-    requestAnimationFrame(loop); // Mulai loop saat halaman siap
+    // Set interval unik untuk setiap slider
+    setInterval(nextSlide, selector === ".foto-info-slider" ? 8000 : 5000); 
 }
 
+// Panggil fungsi untuk masing-masing slider secara independen
 document.addEventListener("DOMContentLoaded", function () {
-    createSlider(".groom-slider", 5000);
-    createSlider(".bridge-slider", 5000);
-    createSlider(".foto-info-slider", 7000);
+    createSlider(".groom-slider");
+    createSlider(".bridge-slider");
+    createSlider(".foto-info-slider");
 });
 
       
@@ -460,6 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
       </section>
+      
       <section id="rspv" class="rspv overflow-hidden py-5">
         <div class="container">
           <!-- Bagian Header -->
@@ -940,7 +940,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </script>
-
 
 
 
