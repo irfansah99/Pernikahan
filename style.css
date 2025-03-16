@@ -1,5 +1,5 @@
 :root {
-  --pink: #f14e95;
+  --pink:  #0b0a0a;
   --bg: #0b0a0a;
   --shadow: 0 2px 2px rgb(0 0 0 /0.5);
   --bg-color: #222;
@@ -50,14 +50,17 @@ body {
 
 
 .arrum {
-  background-image: var(--bg-image, url('img/image_870x_65a5f36290ec8.webp'));
-  min-height: 40vh;
+  background-image: var(--bg-image, url('img/arrum.jpeg'));
+  min-height: 50vh;
   position: relative;
   overflow: hidden; 
-  color: white;
+  color: var(--bg);
   background-size: cover;
   font-weight: bold;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
 }
+
 .groom-section {
   display: flex;
   height: 100vh; 
@@ -147,11 +150,12 @@ margin-top: 100px;
   
 }
 
-.and h1 {
+
+.heart {
+  color: red;
   font-size: 10rem; 
-  color: white;
-  font-family: "sacramento", cursive;
 }
+
 .bridge {
   display: flex;
   height: 100vh; 
@@ -273,7 +277,7 @@ margin-top: 100px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: var(--bg-image, url('img/hero1.jpeg'));
+  background-image: var(--bg-image, url('img/dian&pian1.webp'));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -285,24 +289,34 @@ margin-top: 100px;
 .hero h1 .hero h4 .hero p{
   text-shadow: var(--shadow);
   text-transform: uppercase;
+
 }
 .hero h1 {
   font-family: "sacramento", cursive;
   font-size: 6rem;
-  color: var(--pink);
+  color: black;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white;
+  
 }
 .hero h3{
   font-family: "Bona Nova SC", serif;
   text-transform: uppercase;
   margin-top: 10rem;
-  
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
 }
 .hero h4 {
   font-size: 1.6rem;
   margin-top: 1rem;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 }
 .hero p {
   font-size: 1.4rem;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 }
 .hero a {
   color: var(--pink);
@@ -345,10 +359,9 @@ margin-top: 100px;
 .gallery h2,
 .info h2,
 .story h2,
-.gifts h2,
 .Seeyou h2,
 .komentar h1{
-  color: var(--pink);
+  color:  white;;
   font-family:  'sacramento';
   font-size: 5rem;
   font-weight: bold;
@@ -380,8 +393,8 @@ margin-top: 100px;
 }
 .gallery,
 .gifts,
-.rspv,
-.arrum{
+.rspv
+{
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
@@ -389,8 +402,7 @@ margin-top: 100px;
   padding-top: 8rem;
 }
 .story span,
-.gallery span,
-.gifts span
+.gallery span
 {
   text-transform: uppercase;
   color: #666;
@@ -400,7 +412,6 @@ margin-top: 100px;
   margin-bottom: 1rem;
 }
 .story p,
-.gallery p,
 .rspv p,
 .gifts p
 {
@@ -497,11 +508,17 @@ display: table;
   background-color: #f5f5f5;
 }
 
+.gallery h2
+{
+  color:  var(--bg);
+  font-family:  'sacramento';
+  font-size: 5rem;
+  font-weight: bold;
+}
 
 
 
 .gallery .img-fluid {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   object-fit: cover;
   height: 400px;
   width: 500px;
@@ -530,9 +547,9 @@ display: table;
   color: white;
 }
 .rspv button{
-  background-color: var(--pink);
+  background-color: #007bff;
   color: white;
-  border: 1px solid var(--pink);
+  border: 1px solid #007bff;
 }
 .rspv button:hover{
   background-color: white;
@@ -626,6 +643,12 @@ display: table;
   padding: 1.5rem;
 }
 
+.gifts h2{
+  color:  var(--bg);
+  font-family:  'sacramento';
+  font-size: 5rem;
+  font-weight: bold;
+}
 
 
 .gifts .copy-button {
@@ -700,6 +723,7 @@ display: table;
   font-size: 1rem;
   color: white;
   font-family: "Bona Nova SC", serif;
+  
 }
 
 
@@ -1054,6 +1078,10 @@ footer a:hover {
   .gifts .copy-button {
     top: 115px;
   }
-
+  .gallery .img-fluid {
+  object-fit: cover;
+  height: 250px;
+  width: 500px;
+}
 }
 
