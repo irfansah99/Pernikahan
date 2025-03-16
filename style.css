@@ -263,6 +263,11 @@ margin-top: 100px;
 }
 
 
+.peta{
+margin-right: 2px;
+  margin-top: 5px;
+}
+
 
 .hero {
   min-height: 100vh;
@@ -385,12 +390,14 @@ margin-top: 100px;
 }
 .info .card-body{
   font-size: 1rem;
+  border-bottom: 1px solid #999;
 }
 .info .card-.seeyou{
   border-top: 1px solid #999;
   font-size: 0.9rem;
   font-weight: 300;
 }
+
 .gallery,
 .gifts,
 .rspv
@@ -399,9 +406,15 @@ margin-top: 100px;
   padding-bottom: 8rem;
 }
 .story{
-  padding-top: 8rem;
+  padding-top: 5rem;
 }
-.story span,
+
+.story h2{
+  color:  var(--bg);;
+  font-family:  'sacramento';
+  font-size: 5rem;
+  font-weight: bold;
+}
 .gallery span
 {
   text-transform: uppercase;
