@@ -242,8 +242,8 @@ margin-top: 100px;
   
 }
 .foto-info{
-  width: 40vw; 
-  height: 100vh;
+  width: 400px;
+  height: 500px;
   position: relative;
   display: flex; 
   align-items: center; 
@@ -1008,8 +1008,8 @@ footer a:hover {
     height: 500px;
   }
   .foto-info {
-    width: 600px;
-    height: 700px;
+    width: 400px;
+    height: 500px;
   }
   .sticky-top{
     overflow: hidden;
