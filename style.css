@@ -414,6 +414,7 @@ margin-right: 2px;
 }
 .story{
   padding-top: 5rem;
+  background-color: #ebebeb;
 }
 
 .story h2{
@@ -807,13 +808,13 @@ footer {
 }
 
 footer a {
-  color: var(--bg);
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: white;
+  color: blue;
 }
 
 
