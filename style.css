@@ -772,13 +772,8 @@ display: table;
 }
 
 .Seeyou {
-  background: #444;
-  padding: 50px auto; 
+  background: #444; 
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .Seeyou img {
