@@ -142,7 +142,7 @@ items.forEach(item => {
             <div class="row justify-content-center" >
               <div class="col-md-8 col-10 text-center">
                  <h4 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"data-aos-easing="ease-in-out">our wedding</h4>
-                 <h2 data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"data-aos-easing="ease-in-out">Alfian dan Dian</h2>
+                 <h2 data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"data-aos-easing="ease-in-out">Fian dan Dian</h2>
                  <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"data-aos-easing="ease-in-out">04 mei 2025</p>
             </div>
           </div>
@@ -250,13 +250,12 @@ items.forEach(item => {
               </div>
               <div class="card-footer">
                 Alamat: Rumah Mempelai Wanita  <br>
-                Rusunawa Semper Barat TWR Lt 13 unit 06, rt 19 rw 04, kelurahan semper barat, kecamatan Cilincing, jakarta utara 14130.
+                Gedung Biru Putih, Rusunawa Semper Barat, rt 19 rw 04, kelurahan semper barat, kecamatan Cilincing, jakarta utara 14130
                 <br>
                 <a href="https://maps.app.goo.gl/jiVYVKZQPWRgPeEp8" target="_blank" class="btn btn-light btn-sm my-3"><ion-icon class="peta" name="location-outline"></ion-icon>Klik untuk Membuka Peta</a>
               </div>
             </div>
           </div>
-
           <div class="col-md-5 col-10"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
             <div class="card text-center text-bg-light">
               <div class="card-header">
@@ -276,7 +275,7 @@ items.forEach(item => {
               </div>
               <div class="card-footer">
                 Alamat: Rumah Mempelai Wanita  <br>
-                Rusunawa Semper Barat TWR Lt 13 unit 06, rt 19 rw 04, kelurahan semper barat, kecamatan Cilincing, jakarta utara 14130.
+                Gedung Biru Putih, Rusunawa Semper Barat, rt 19 rw 04, kelurahan semper barat, kecamatan Cilincing, jakarta utara 14130
                 <br>
                 <a href="https://maps.app.goo.gl/jiVYVKZQPWRgPeEp8" target="_blank" class="btn btn-light btn-sm my-3"><ion-icon class="peta" name="location-outline"></ion-icon>Klik untuk Membuka Peta</a>
               </div>
@@ -461,6 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       </section>
       
+
       <section id="rspv" class="rspv overflow-hidden py-5">
         <div class="container">
           <!-- Bagian Header -->
@@ -480,8 +480,8 @@ document.addEventListener("DOMContentLoaded", function () {
               <!-- Kolom Nama -->
               <div class="col-md-3 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="mb-3">
-                  <label for="name" class="form-label">Nama</label>
-                  <input type="text" class="form-control" id="nama" name="nama">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="nama" name="nama" required>
                 </div>
               </div>
       
@@ -489,7 +489,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="col-md-1 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="mb-3">
                   <label for="jumlah" class="form-label">Total</label>
-                  <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" value="1">
+                  <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" value="1" required>
                 </div>
               </div>
       
@@ -497,7 +497,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="col-md-2 col-12"data-aos="zoom-in" data-aos-delay="500" data-aos-duration="400"data-aos-easing="ease-in-out">
                 <div class="mb-3">
                   <label for="status" class="form-label">Status</label>
-                  <select name="status" id="status" class="form-select">
+                  <select name="status" id="status" class="form-select" required>
                     <option selected>Select one</option>
                     <option value="Hadir">Hadir</option>
                     <option value="Tidak Hadir">Tidak Hadir</option>
@@ -520,7 +520,7 @@ document.addEventListener("DOMContentLoaded", function () {
           
                   <form id="commentForm" class="mb-3">
                       <div class="mb-2">
-                          <label for="pengirim" class="form-label">Nama</label>
+                          <label for="pengirim" class="form-label">Name</label>
                           <input type="text" class="form-control" id="pengirim" name="pengirim" required>
                       </div>
                       <div class="mb-2">
@@ -541,6 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         </div>
       </section>
+
       <section id="gifts" class="gifts overflow-hidden">
         <div class="container">
             <div class="row justify-content-center">
@@ -564,7 +565,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 
               
                   <div class="modal fade" id="modalBank" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalBankLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h1 class="modal-title fs-5" id="modalBankLabel">Bank Account</h1>
@@ -586,7 +587,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 
              
                   <div class="modal fade" id="modalGift" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalGiftLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h1 class="modal-title fs-5" id="modalGiftLabel">Gift</h1>
@@ -596,7 +597,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           <div class="card">
                             <h5>Dian Pratiwi<br>08569702457</h5>
                             <p class="text-center justify-content-center">
-                              Rusunawa Semper Barat, Rt 019/004 Cilincing, Jakarta Utara
+                              Rusunawa Semper Barat TWR Lt 13 unit 06, rt 19 rw 04, kelurahan semper barat, kecamatan Cilincing, jakarta utara 14130
                             </p>
                             <button class="map-button text-center justify-content-center"><a href="https://maps.app.goo.gl/jiVYVKZQPWRgPeEp8" target="_blank" class="btn_gift" ></a>
                               lihat lokasi
@@ -615,19 +616,10 @@ document.addEventListener("DOMContentLoaded", function () {
  
 
 
-            <section class="Seeyou">
-              <div class="container">
-                <!-- Judul dan deskripsi bagian -->
-                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out">
-                  <div class="col-md-8 col-10 text-center">
-                    <span>
-                      <img src="img/seeyou.jpeg" alt="Foto Pian & Dian">
-                    </span>
+            <section class="Seeyou" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out">
+                    <img src="img/seeyou.jpeg" alt="Foto Pian & Dian">
                     <h3>See you on our wedding day!</h3>
                     <h2>Alfian & Dian</h2>
-                  </div>
-                </div>
-              </div>
             </section>
             
       
