@@ -76,6 +76,7 @@ margin-top: 100px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
+  justify-content: center;
 
 }
 
@@ -134,11 +135,13 @@ margin-top: 100px;
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   margin: 0;
+  font-weight: bold;
 }
 
 .groom-section .overlay-text p {
   font-size: 1.2rem;
   margin: 5px 0 0;
+  font-weight: bold;
 }
 
 
@@ -169,6 +172,7 @@ margin-top: 100px;
   flex-direction: column;
   margin-top: 100px;
   align-items: center;
+  justify-content: center;
   position: relative;
   text-align: center;
   text-transform: uppercase;
@@ -221,17 +225,20 @@ margin-top: 100px;
   padding: 15px 20px;
   border-radius: 10px;
   text-align: center;
+  font-weight: bold;
 }
 
 .bridge .overlay-text h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   margin: 0;
+  font-weight: bold;
 }
 
 .bridge .overlay-text p {
   font-size: 1.2rem;
   margin: 5px 0 0;
+  font-weight: bold;
 }
 .foto-info-inti {
   display: flex;
@@ -332,6 +339,7 @@ margin-right: 2px;
 }
 .hero a {
   color: var(--pink);
+  font-weight: bold;
   background-color: white;
   box-shadow: var(--shadow);
   animation: moveButton 2s infinite ease-in-out;
@@ -366,6 +374,8 @@ margin-right: 2px;
   padding-top: 10px;
   padding-bottom: 10rem;
 }
+
+
 
 .rspv h2,
 .gallery h2,
@@ -433,7 +443,10 @@ margin-right: 2px;
 .gifts p
 {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 500;
+}
+.story h3, .story span{
+  font-weight: bold;
 }
 .timeline{
   list-style: none;
@@ -714,6 +727,7 @@ display: table;
   background: linear-gradient(135deg, #007bff, white); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: white; 
+
 }
 
 #gifts #modalBank img {
@@ -745,6 +759,7 @@ display: table;
   color: white;
   font-family: "Bona Nova SC", serif;
 }
+
 #gifts #modalGift p {
   font-size: 1rem;
   color: white;
@@ -752,7 +767,9 @@ display: table;
   
 }
 
-
+.gift .modal{
+  margin: auto;
+}
 .gift .modal-dialog {
   display: flex;
   align-items: center;
@@ -763,6 +780,7 @@ display: table;
 .gifts .modal-content {
   padding: 20px;
   border-radius: 10px;
+
 }
 
 .gifts .modal-body {
@@ -772,8 +790,14 @@ display: table;
 }
 
 .Seeyou {
-  background: #444; 
+  background: #444;
+  padding: 50px auto; 
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
 }
 
 .Seeyou img {
