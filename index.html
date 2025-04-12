@@ -141,9 +141,9 @@ items.forEach(item => {
           <div class="container">
             <div class="row justify-content-center" >
               <div class="col-md-8 col-10 text-center">
-                 <h4 data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"data-aos-easing="ease-in-out">our wedding</h4>
-                 <h2 data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"data-aos-easing="ease-in-out">Fian dan Dian</h2>
-                 <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"data-aos-easing="ease-in-out">04 mei 2025</p>
+                 <h4>our wedding</h4>
+                 <h2>Fian dan Dian</h2>
+                 <p>04 mei 2025</p>
             </div>
           </div>
         </section>
@@ -420,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Bagian Galeri -->
         <div class="row  row-cols-md-4 row-cols-sm-2 row-cols-2 g-4 justify-content-center ">
           <div class="col"data-aos="fade-right" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
-            <a href="img/hero1.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 1" data-gallery="example-gallery">
+            <a href="img/hero1.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 1" data-gallery="example-gallery" data-size="lg">
               <img src="img/hero1.jpeg" alt="Dian Pratiwi SOS 1" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
@@ -677,35 +677,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
       </script>
-    <script>
-      // Array gambar background
-      const backgrounds = [
-        "img/dian&pian3.webp",
-        "img/dian&pian4.webp",
-        "img/dian&pian1.webp",
-      ];
-    
-      // Index awal
-      let currentIndex = 0;
-    
-      // Target elemen
-      const heroSection = document.querySelector('.hero');
-    
-      // Fungsi mengganti background
-      function changeBackground() {
-        // Update index
-        currentIndex = (currentIndex + 1) % backgrounds.length;
-    
-        // Ganti nilai CSS Variable
-        heroSection.style.setProperty('--bg-image', `url('${backgrounds[currentIndex]}')`);
-      }
-    
-      // Jalankan fungsi setiap 5 detik
-      setInterval(changeBackground, 5000);
-    
-      // Inisialisasi dengan gambar pertama
-      heroSection.style.setProperty('--bg-image', `url('${backgrounds[currentIndex]}')`);
-    </script>
+
     
         <!-- AOS Animation JS -->
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -713,7 +685,8 @@ document.addEventListener("DOMContentLoaded", function () {
           AOS.init();
         </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+
    <script>
       
       // SimplyCountdown Initialization
