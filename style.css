@@ -9,7 +9,7 @@
 }
 body {
   font-size: 1.2rem;
-  font-family: "work sans", sans-serif;
+  font-family: "work s ns", sans-serif;
   min-height: 4000px;
 }
 .home {
@@ -294,11 +294,28 @@ margin-right: 2px;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
-  transition: background-image 1s ease; 
+  animation: slideshow 15s infinite ease-in-out;
 
   
 }
-
+@keyframes slideshow {
+  0% {
+    background-image: url("img/dian&pian3.webp");
+    opacity: 1;
+  }
+  33.33% {
+    background-image: url("img/dian&pian4.webp");
+    opacity: 1;
+  }
+  66.66% {
+    background-image: url("img/dian&pian1.webp");
+    opacity: 1;
+  }
+  100% {
+    background-image: url("img/dian&pian3.webp");
+    opacity: 1;
+  }
+  }
 
 .hero h1 .hero h4 .hero p{
   text-shadow: var(--shadow);
