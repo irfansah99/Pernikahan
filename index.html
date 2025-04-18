@@ -24,6 +24,8 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
   </head>
@@ -420,42 +422,82 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Bagian Galeri -->
         <div class="row  row-cols-md-4 row-cols-sm-2 row-cols-2 g-4 justify-content-center ">
           <div class="col"data-aos="fade-right" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
-            <a href="img/hero1.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 1" data-gallery="example-gallery" data-size="lg">
+            <a href="#overlay1">
               <img src="img/hero1.jpeg" alt="Dian Pratiwi SOS 1" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
-            <a href="img/dian&pian9.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 4" data-gallery="example-gallery">
+            <a href="#overlay2">
               <img src="img/dian&pian9.jpeg" alt="Dian Pratiwi SOS 4" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
-            <a href="img/info.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 4" data-gallery="example-gallery">
+            <a href="#overlay3">
               <img src="img/info.jpeg" alt="Dian Pratiwi SOS 4" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
-            <a href="img/dian&pian6.webp" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 3" data-gallery="example-gallery">
+            <a href="#overlay4">
               <img src="img/dian&pian6.webp" alt="Dian Pratiwi SOS 3" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
-            <a href="img/dian&pian7.webp" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 4" data-gallery="example-gallery">
+            <a href="#overlay5">
               <img src="img/dian&pian7.webp" alt="Dian Pratiwi SOS 4" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col"data-aos="fade-left" data-aos-delay="300" data-aos-duration="400"data-aos-easing="ease-in-out">
-            <a href="img/dian&pian8.jpeg" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 5" data-gallery="example-gallery">
+            <a href="#overlay6">
               <img src="img/dian&pian8.jpeg" alt="Dian Pratiwi SOS 5" class="img-fluid w-100 rounded shadow">
             </a>
           </div>
           <div class="col-12" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out">
-            <a href="img/dian&pian5.webp" data-toggle="lightbox" data-caption="Dian Pratiwi SOS 6" data-gallery="example-gallery">
+            <a href="#overlay7" >
                 <img src="img/dian&pian5.webp" alt="Dian Pratiwi SOS 6" class="img-fluid w-100 rounded shadow" style="height: 400px; object-fit: cover;">
             </a>
         </div>
-        
-          
+        </div>
+        <div class="overlay" id="overlay1">
+          <a href="#gallery" class="close">X</a>
+          <a href="#overlay7" class="prev"><i class="fas fa-chevron-left"></i></a>
+          <img src="img/hero1.jpeg" alt="">
+          <a href="#overlay2" class="next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="overlay" id="overlay2">
+          <a href="#gallery" class="close">X</a>
+          <a href="#overlay1" class="prev"><i class="fas fa-chevron-left"></i></a>
+          <img src="img/dian&pian9.jpeg" alt="">
+          <a href="#overlay3" class="next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="overlay" id="overlay3">
+          <a href="#gallery" class="close">X</a>
+          <a href="#overlay2" class="prev"><i class="fas fa-chevron-left"></i></a>
+          <img src="img/info.jpeg" alt="">
+          <a href="#overlay4" class="next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="overlay" id="overlay4">
+          <a href="#gallery" class="close">X</a>
+          <a href="#overlay3" class="prev"><i class="fas fa-chevron-left"></i></a>
+          <img src="img/dian&pian6.webp" alt="">
+          <a href="#overlay5" class="next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="overlay" id="overlay5">
+          <a href="#gallery" class="close">X</a>
+          <a href="#overlay4" class="prev"><i class="fas fa-chevron-left"></i></a>
+          <img src="img/dian&pian7.webp" alt="">
+          <a href="#overlay6" class="next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="overlay" id="overlay6">
+          <a href="#gallery" class="close">X</a>
+          <a href="#overlay5" class="prev"><i class="fas fa-chevron-left"></i></a>
+          <img src="img/dian&pian8.jpeg" alt="">
+          <a href="#overlay7" class="next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="overlay" id="overlay7">
+          <a href="#gallery" class="close">X</a>
+          <a href="#overlay6" class="prev"><i class="fas fa-chevron-left"></i></a>
+          <img src="img/dian&pian5.webp" alt="">
+          <a href="#overlay1" class="next"><i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
       </section>
