@@ -6,7 +6,9 @@
   --text-color: #aaa;
   --active-color: #00bcd4;
   --shadow-color: rgba(0, 0, 0, 0.2);
+  color-scheme: light; 
 }
+
 body {
   font-size: 1.2rem;
   font-family: "work s ns", sans-serif;
