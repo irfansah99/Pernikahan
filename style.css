@@ -401,7 +401,6 @@ margin-right: 2px;
 .rspv h2,
 .gallery h2,
 .info h2,
-.story h2,
 .Seeyou h2,
 .komentar h1{
   color:  white;;
@@ -1298,3 +1297,199 @@ footer a:hover {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .our {
+    background-color:  linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+
+  }
+  .arrum{
+    color: black;
+  }
+  .bridge .right-content {
+    background-color: white;
+    color: black;
+  }
+  .groom-section .left-content {
+    color: black;
+    background-color: white;
+  
+  }
+  .story{
+    background-color: #ebebeb;
+  }
+  .story h2, .story p{
+    color:  var(--bg);;
+  }
+  .timeline li .timeline-image {
+    width: 160px;
+    height: 160px;
+    background-color: #ccc;
+    position: absolute;
+    left : 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .timeline li .timeline-panel {
+    width: 40%;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    position: relative;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .timeline li.timeline-invert .timeline-panel {
+    float: right;
+  }
+  .timeline li .timeline-panel::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    top:80px;
+    right: -15px;
+  }
+  .timeline li.timeline-invert .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+  .timeline li .timeline-panel::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    top:81px;
+    right: -13px;
+  }
+  .timeline li.timeline-invert .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+  }
+  .gallery{
+    background-color: #f5f5f5;
+  }
+  .rspv h2,
+.gallery h2,
+.info h2,
+.Seeyou h2,
+.komentar h1{
+  color:  white;;
+  font-family:  'sacramento';
+  font-size: 5rem;
+  font-weight: bold;
+}
+.gifts {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+
+
+.gifts .card-header {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.gifts .card-body {
+  padding: 1.5rem;
+}
+
+.gifts h2{
+  color:  var(--bg);
+  font-family:  'sacramento';
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+
+.gifts .copy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 130px;
+}
+.map-button{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.gifts .copy-button:hover {
+  background-color: #0056b3;
+
+}
+.gifts .card {
+  height: 200px;
+  width: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #007bff, white); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white; 
+
+}
+
+#gifts #modalBank img {
+  position: absolute;
+  top: 10px;
+  right: 20px; 
+  width: 100px;
+  height: 70px;
+}
+
+#gifts #modalBank h5 {
+  position: absolute;
+  top: 50px;
+  left: 15px; 
+  font-size: 1.8rem;
+  color: white;
+  font-family: "Bona Nova SC", serif;
+}
+
+#gifts #modalBank h3 {
+  font-family: "Bona Nova SC", serif;
+  position: absolute;
+  top: 90px;
+  color: white;
+}
+
+#gifts #modalGift h5{
+  font-size: 1.3rem;
+  color: white;
+  font-family: "Bona Nova SC", serif;
+}
+
+#gifts #modalGift p {
+  font-size: 1rem;
+  color: white;
+  font-family: "Bona Nova SC", serif;
+  
+}
+}
